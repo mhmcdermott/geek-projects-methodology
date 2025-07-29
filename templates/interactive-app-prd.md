@@ -23,6 +23,31 @@
 - Google Workspace integrations: [Specify which APIs]
 - User authentication: Google OAuth implementation
 
+### Dependency Management Strategy
+
+#### Critical Dependencies (Conservative Pinning)
+- **React & React-DOM**: Pin to stable major version (e.g., "19.1.1")
+- **Tailwind CSS**: Stay on stable v3.x, avoid v4 beta
+- **Next.js**: Pin to tested stable version
+- **TypeScript**: Pin to compatible version
+
+#### Update Testing Requirements
+- [ ] Create feature branch for dependency updates
+- [ ] Clear caches: `rm -rf .next && rm -rf node_modules`
+- [ ] Test all core functionality
+- [ ] Verify build process completes
+- [ ] Check TypeScript compilation
+- [ ] Run performance audit
+- [ ] Document any issues in DEPENDENCY_STRATEGY.md
+
+#### Launch Criteria Addition
+- [ ] DEPENDENCY_STRATEGY.md created and complete
+- [ ] CLAUDE.md includes dependency management section
+- [ ] Dependabot configured with appropriate ignore rules
+- [ ] CI/CD pipeline tests dependency updates
+- [ ] All critical dependencies pinned to stable versions
+- [ ] Security audit passes: `npm audit`
+
 ### Security Requirements
 - [ ] Input validation on all forms
 - [ ] CSRF protection

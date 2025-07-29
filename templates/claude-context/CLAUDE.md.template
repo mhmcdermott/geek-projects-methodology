@@ -1,0 +1,58 @@
+# Claude AI Assistant Instructions
+
+## Project: [PROJECT_NAME]
+**Type**: [Tier 1/2/3 - Simple Site/Interactive App/SaaS Application]
+**Stack**: Next.js + TypeScript + Tailwind CSS + [Other tech]
+**Last Updated**: [DATE]
+
+## Development Guidelines
+
+### Tech Stack Specifications
+- **Framework**: Next.js [version] with App Router
+- **Language**: TypeScript for type safety
+- **Styling**: Tailwind CSS [version] - **IMPORTANT: Stay on v3.x, avoid v4 beta**
+- **Database**: [Notion API/Supabase/Other]
+- **Authentication**: [Google OAuth/Other]
+- **Deployment**: Vercel
+
+## Dependency Management (CRITICAL)
+
+### Conservative Pinning Strategy
+```json
+{
+  "react": "19.1.1",
+  "react-dom": "19.1.1",
+  "tailwindcss": "^3.4.17"
+}
+```
+
+### Known Problematic Dependencies
+- **Tailwind CSS v4**: Currently in beta, causes breaking changes
+- **[Other problematic deps]**: [Describe issues and workarounds]
+
+### Build Troubleshooting
+If you encounter build errors:
+1. **Clear Next.js cache**: `rm -rf .next`
+2. **Clear node_modules**: `rm -rf node_modules && npm install`
+3. **Check TypeScript errors**: Fix compilation issues first
+4. **Test in clean environment**: Verify issue isn't local
+5. **Check recent changes**: Review git commits for breaking modifications
+
+## Quick Commands Reference
+
+```bash
+# Clear caches (most important!)
+rm -rf .next
+rm -rf node_modules && npm install
+
+# Development
+npm run dev
+npm run build
+npm run type-check
+npm run lint
+
+# Troubleshooting
+npm audit
+npm outdated
+npm ls
+```

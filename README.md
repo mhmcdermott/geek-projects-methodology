@@ -65,6 +65,42 @@ A streamlined development methodology for building high-quality web applications
 - [Performance Standards](./checklists/performance-checklist.md)
 - [Design Standards](./checklists/design-checklist.md)
 
+## 🔧 Dependency Management
+
+This methodology now includes comprehensive dependency management based on real-world learnings:
+
+### Conservative Pinning Strategy
+- **React & React-DOM**: Pinned to stable versions (19.1.1)
+- **Tailwind CSS**: Stay on v3.x, avoid v4 beta
+- **Next.js**: Pin to tested stable versions
+- **TypeScript**: Maintain compatibility
+
+### Automated Protection
+- **Dependabot**: Configured for security patches only
+- **CI/CD Pipeline**: Tests all dependency updates
+- **Build Troubleshooting**: Systematic cache clearing procedures
+
+### Key Files
+- `/docs/DEPENDENCY_STRATEGY.md` - Template for project dependency docs
+- `/templates/github-workflows/dependabot.yml` - Automation configuration
+- `/templates/github-workflows/dependency-test.yml` - Testing pipeline
+- `/templates/claude-context/CLAUDE.md.template` - AI assistant guidance
+
+### Quick Start
+1. Copy appropriate template files to your project
+2. Configure Dependabot with provided yml
+3. Set up CI/CD testing pipeline
+4. Pin critical dependencies in package.json
+5. Create DEPENDENCY_STRATEGY.md documentation
+
+### Build Issue Resolution
+If you encounter module resolution or build errors:
+```bash
+rm -rf .next                          # Clear Next.js cache
+rm -rf node_modules && npm install    # Fresh dependency install
+npm run build                         # Test build process
+```
+
 ## 🚀 Getting Started
 
 1. Choose your project tier
