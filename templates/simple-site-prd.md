@@ -64,6 +64,67 @@
 - [ ] All forms tested
 - [ ] Content reviewed and approved
 
+## 🤖 Agent Coordination Strategy
+
+### Project Tier Assessment
+**Tier**: 1 - Simple Site
+**Complexity**: Marketing sites, portfolios, blogs
+**Agent Team**: Streamlined team for speed with stability
+
+### Agent Team Assignment
+
+**Core Agents for This Tier:**
+- `frontend-ux-specialist` - Responsive design and UX implementation
+- `dependency-strategist` - Conservative dependency management
+- `geek-projects-quality-gate` - Quality standards enforcement
+- `epct-orchestrator` - Workflow coordination
+
+### Agent Activation Patterns
+
+**Planning Phase:**
+```bash
+"Use epct-orchestrator to coordinate comprehensive planning for this Tier 1 project"
+"Use dependency-strategist to assess technology stack requirements for simple site"
+```
+
+**Implementation Phase:**
+```bash
+"Use frontend-ux-specialist to implement responsive design and user interface"
+"Use dependency-strategist for any package decisions"
+"Use geek-projects-quality-gate to validate each major feature"
+```
+
+**Testing & Launch Phase:**
+```bash
+"Use epct-orchestrator to coordinate comprehensive pre-launch validation"
+"Use geek-projects-quality-gate to validate deployment readiness"
+```
+
+### Quality Gates (Agent-Enforced)
+
+**Security Requirements** (security-threat-analyst validation):
+- [ ] Input validation implementation (contact forms)
+- [ ] Security headers configuration
+- [ ] Dependency security scan
+
+**Performance Standards** (performance-optimizer validation):
+- [ ] Page load time < 3 seconds
+- [ ] Lighthouse score > 90
+- [ ] Mobile responsiveness verified
+- [ ] Core Web Vitals compliance
+
+**Dependency Health** (dependency-strategist validation):
+- [ ] Conservative pinning strategy implemented
+- [ ] Security vulnerabilities resolved
+- [ ] Update procedures documented
+- [ ] Build stability verified
+
+**Overall Quality** (geek-projects-quality-gate enforcement):
+- [ ] All Tier 1 standards met
+- [ ] Methodology compliance verified
+- [ ] Documentation completeness confirmed
+- [ ] Deployment readiness validated
+
 ## Post-Launch
 - [ ] Monitor analytics for user behaviour
 - [ ] Track contact form submissions
