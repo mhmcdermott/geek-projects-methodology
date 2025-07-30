@@ -2,34 +2,75 @@
 
 This directory contains the specialized AI agents that enhance the E.P.C.T. (Explore, Plan, Code, Test) workflow with integrated dependency management.
 
-## 🤖 Core Methodology Agents
+## 🤖 Agent Catalog
 
-### dependency-strategist.md
-**Role**: Conservative dependency management expert
-**Focus**: React 19.x, Tailwind 3.x, build stability
-**Key Responsibilities**:
-- Enforce conservative pinning strategy
-- Prevent problematic dependency updates (e.g., Tailwind CSS v4 beta)
-- Guide dependency troubleshooting procedures
-- Maintain DEPENDENCY_STRATEGY.md documentation
+### Core Methodology Agents
 
-### epct-orchestrator.md
-**Role**: E.P.C.T. workflow coordinator
-**Focus**: Agent selection and phase management
-**Key Responsibilities**:
-- Assess project tier (Simple Site / Interactive App / SaaS)
-- Coordinate appropriate agent teams for each phase
-- Ensure methodology compliance throughout development
-- Manage handoffs between Explore → Plan → Code → Test phases
+#### dependency-strategist.md
+**Role**: Conservative dependency management expert  
+**Focus**: React 19.x, Tailwind 3.x, build stability  
+**Use When**: Package evaluation, security audits, build troubleshooting
 
-### geek-projects-quality-gate.md
-**Role**: Quality standards enforcer
-**Focus**: Security, performance, dependency health validation
-**Key Responsibilities**:
-- Enforce tier-specific quality standards
-- Validate security implementation
-- Monitor performance benchmarks
-- Ensure dependency health before deployment
+#### epct-orchestrator.md
+**Role**: E.P.C.T. workflow coordinator  
+**Focus**: Agent selection and phase management  
+**Use When**: Project assessment, workflow coordination, phase transitions
+
+#### geek-projects-quality-gate.md
+**Role**: Quality standards enforcer  
+**Focus**: Security, performance, dependency health validation  
+**Use When**: Quality validation, pre-deployment checks, standards compliance
+
+### Technical Specialists
+
+#### systems-architect.md
+**Role**: Technical architecture specialist  
+**Focus**: Scalable system design, database modeling, API structure  
+**Use When**: Architecture design, database planning, system integration
+
+#### security-threat-analyst.md
+**Role**: Security specialist  
+**Focus**: Threat modeling, vulnerability analysis, defensive security  
+**Use When**: Security planning, vulnerability assessment, compliance validation
+
+#### frontend-ux-specialist.md
+**Role**: Frontend development and UX expert  
+**Focus**: React 19.x, Tailwind CSS 3.x, accessible user experiences  
+**Use When**: UI/UX design, component development, accessibility implementation
+
+#### backend-reliability-engineer.md
+**Role**: Backend systems specialist  
+**Focus**: Reliable APIs, database operations, server-side architecture  
+**Use When**: API development, database operations, server-side logic
+
+#### performance-optimizer.md
+**Role**: Web performance specialist  
+**Focus**: Core Web Vitals, bundle optimization, user experience performance  
+**Use When**: Performance optimization, speed improvements, Core Web Vitals
+
+### Quality & Process Experts
+
+#### qa-test-engineer.md
+**Role**: Quality assurance and testing specialist  
+**Focus**: Testing strategies, automated testing, quality validation  
+**Use When**: Test planning, quality assurance, test automation
+
+#### code-analyzer-debugger.md
+**Role**: Code analysis and debugging specialist  
+**Focus**: Systematic problem resolution, build troubleshooting, code quality  
+**Use When**: Bug investigation, build failures, code quality analysis
+
+### Business & Strategy Team
+
+#### prd-writer.md
+**Role**: Product requirements documentation specialist  
+**Focus**: Clear, comprehensive PRDs aligned with methodology  
+**Use When**: Requirements gathering, PRD creation, project documentation
+
+#### product-manager-orchestrator.md
+**Role**: Enterprise-level project orchestration specialist  
+**Focus**: Complex multi-agent teams for Tier 3 SaaS applications  
+**Use When**: Enterprise projects, multi-team coordination, strategic planning
 
 ## Installation
 
@@ -53,24 +94,33 @@ cp agents/*.md ~/.claude/agents/
 ### 💻 CODE Phase
 - **Frontend**: `frontend-ux-specialist` for UI/UX implementation
 - **Backend**: `backend-reliability-engineer` for server-side logic
+- **Performance**: `performance-optimizer` for optimization
 - **Dependencies**: `dependency-strategist` for package management
+- **Debugging**: `code-analyzer-debugger` for issue resolution
 
 ### 🧪 TEST Phase
 - **Testing**: `qa-test-engineer` for comprehensive validation
+- **Security**: `security-threat-analyst` for security audit
+- **Performance**: `performance-optimizer` for benchmarks
 - **Quality Gates**: `geek-projects-quality-gate` for final validation
 
 ## 🎯 Project Tier Guidance
 
 ### Tier 1 (Simple Sites)
-**Agent Team**: `frontend-ux-specialist`, `qa-test-engineer`, `dependency-strategist`
+**Core Agents**: `frontend-ux-specialist`, `dependency-strategist`, `geek-projects-quality-gate`  
+**Coordinator**: `epct-orchestrator`  
 **Focus**: Speed with stability, minimal complexity
 
 ### Tier 2 (Interactive Apps)
-**Agent Team**: `systems-architect`, `security-threat-analyst`, `backend-reliability-engineer`, `frontend-ux-specialist`, `performance-optimizer`, `qa-test-engineer`
+**Core Agents**: `systems-architect`, `security-threat-analyst`, `backend-reliability-engineer`, `frontend-ux-specialist`, `performance-optimizer`, `qa-test-engineer`, `dependency-strategist`  
+**Coordinator**: `epct-orchestrator`  
+**Support**: `code-analyzer-debugger`, `geek-projects-quality-gate`  
 **Focus**: Comprehensive security and performance validation
 
 ### Tier 3 (SaaS Applications)
-**Agent Team**: Full specialist coordination with `product-manager-orchestrator`
+**Core Agents**: All agents with enterprise coordination  
+**Coordinator**: `product-manager-orchestrator`  
+**Support**: Full specialist team including `prd-writer` for documentation  
 **Focus**: Enterprise-grade implementation with extensive testing
 
 ## 🔧 Integration with Enhanced Methodology
@@ -80,18 +130,22 @@ These agents are designed to work seamlessly with:
 - **Conservative Dependency Strategy** (`../docs/DEPENDENCY_STRATEGY.md`)
 - **Enhanced CLAUDE.md Template** (`../templates/enhanced/claude-md-template.md`)
 
-## 📋 Missing Agents (To Be Created)
+## 📊 Agent Status
 
-The following agents are referenced but not yet implemented:
-- `systems-architect.md`
-- `security-threat-analyst.md`
-- `frontend-ux-specialist.md`
-- `backend-reliability-engineer.md`
-- `performance-optimizer.md`
-- `qa-test-engineer.md`
-- `code-analyzer-debugger.md`
-- `prd-writer.md`
-- `product-manager-orchestrator.md`
+### ✅ Implemented Agents (12 Total)
+All core agents are now implemented and ready for use:
+
+**Core Methodology** (3):
+- dependency-strategist, epct-orchestrator, geek-projects-quality-gate
+
+**Technical Specialists** (5):
+- systems-architect, security-threat-analyst, frontend-ux-specialist, backend-reliability-engineer, performance-optimizer
+
+**Quality & Process** (2):
+- qa-test-engineer, code-analyzer-debugger
+
+**Business & Strategy** (2):
+- prd-writer, product-manager-orchestrator
 
 ## 🚨 Critical Reminders
 
