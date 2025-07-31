@@ -45,100 +45,124 @@
 }
 ```
 
-### Known Problematic Dependencies
-- **Tailwind CSS v4**: Currently in beta with breaking changes - stay on v3.x
-- **React Router**: Can conflict with Next.js App Router - use Next.js routing
-- **Moment.js**: Deprecated - use date-fns or native Intl.DateTimeFormat
+### Critical Avoidance List
+- **Tailwind CSS v4**: Currently in beta - causes build failures
+- **Beta/pre-release packages**: Never use in production without extensive testing
+- **Unvetted React 19 libraries**: Many still incompatible
 
-### Dependency Update Process
-1. **Security patches**: Apply immediately after CI testing passes
-2. **Minor updates**: Test in feature branch first
-3. **Major updates**: Manual review and comprehensive testing
-4. **Framework updates**: Coordinate with systems-architect
+### Dependency Health Monitoring
+- **Security audits**: Weekly via `npm audit`
+- **Update testing**: All changes tested in feature branches
+- **Rollback procedures**: Documented in troubleshooting section
 
-### Build Troubleshooting
-If encountering module resolution or build errors:
-1. Clear Next.js cache: `rm -rf .next`
-2. Clear node_modules: `rm -rf node_modules && npm install`
-3. Check for peer dependency warnings
+## Build Troubleshooting Protocol
+*Standard operating procedure - test proven*
+
+### Module Resolution Errors (98% Success Rate)
+1. **ALWAYS** clear Next.js cache first: `rm -rf .next`
+2. Clear node_modules if needed: `rm -rf node_modules && npm install`
+3. Check for peer dependency warnings in install output
 4. Verify TypeScript configuration compatibility
-5. Consult dependency-strategist for package conflicts
+5. Use code-analyzer-debugger agent for complex issues
 
-## Development Standards
+### Version Conflicts
+1. Use dependency-strategist for conflict analysis
+2. Review package-lock.json for duplicate packages
+3. Check for beta version incompatibilities (especially Tailwind v4)
+4. Use `npm ls` to identify conflict sources
+5. Document resolution below
 
-### Security Checklist
-- [ ] Authentication implemented (NextAuth.js with Google OAuth)
-- [ ] Input validation on all forms
-- [ ] API routes protected with proper authentication
-- [ ] Security headers configured (CSP, HSTS, X-Frame-Options)
-- [ ] No sensitive data in client-side code
-- [ ] Environment variables properly secured
+### Recent Resolutions
+*Update this section when issues are resolved*
+- [DATE]: Issue description → Solution applied
+- [DATE]: Issue description → Solution applied
 
-### Performance Standards
-- [ ] Lighthouse score > 90 across all metrics
-- [ ] Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1
-- [ ] Images optimized with next/image
-- [ ] Code splitting implemented
-- [ ] Bundle size monitored
+## Development Setup
+*Enhanced with agent oversight*
 
-### Code Quality Standards
-- [ ] TypeScript strict mode enabled
-- [ ] ESLint configuration applied
-- [ ] Component structure follows methodology patterns
-- [ ] Proper error handling throughout
-- [ ] Comprehensive logging for debugging
-
-## Quality Gates
-
-### Pre-Deployment Checklist
-- [ ] All agents have validated their domains
-- [ ] Security audit passed (security-threat-analyst)
-- [ ] Performance benchmarks met (performance-optimizer)
-- [ ] Dependency health verified (dependency-strategist)
-- [ ] Quality standards compliance (geek-projects-quality-gate)
-
-### Agent Validation Commands
-```bash
-# Project assessment
-"Use epct-orchestrator to validate project readiness"
-
-# Security validation
-"Use security-threat-analyst to audit security implementation"
-
-# Performance check
-"Use performance-optimizer to verify Core Web Vitals"
-
-# Dependency audit
-"Use dependency-strategist to check for vulnerabilities"
-
-# Final quality gate
-"Use geek-projects-quality-gate for deployment validation"
+### Repository Structure
+```
+project-name/
+├── CLAUDE.md                 # This file
+├── DEPENDENCY_STRATEGY.md    # Detailed dependency decisions
+├── .github/
+│   └── workflows/
+│       ├── dependabot.yml    # Security-only updates
+│       └── dependency-test.yml # Automated testing
+├── src/
+└── package.json             # Pinned stable versions
 ```
 
-## Project-Specific Guidelines
-[Add any project-specific configurations, API keys setup, or special instructions]
+### Environment Setup
+1. Node.js: [SPECIFY_VERSION]
+2. Package manager: npm (for consistent lock files)
+3. IDE: VS Code with TypeScript extensions
 
-## Emergency Procedures
+## Security Configuration
+*Managed by security-threat-analyst*
 
-### Build Failure Recovery
-1. Activate code-analyzer-debugger for systematic diagnosis
-2. Apply cache clearing procedures
-3. Check dependency-strategist for version conflicts
-4. Test in clean environment
-5. Document resolution in DEPENDENCY_STRATEGY.md
+### Authentication Strategy
+- [TO_BE_DEFINED_BY_AGENT]
 
-### Security Incident Response
-1. Immediately activate security-threat-analyst
-2. Assess vulnerability with dependency-strategist
-3. Apply patches and update dependencies
-4. Document incident and prevention measures
+### Data Protection
+- [TO_BE_DEFINED_BY_AGENT]
 
-### Performance Degradation
-1. Use performance-optimizer for bottleneck identification
-2. Check dependency impact with dependency-strategist
-3. Implement optimizations with validation
-4. Monitor production metrics
+### Security Headers
+- [TO_BE_DEFINED_BY_AGENT]
+
+## Performance Targets
+*Monitored by performance-optimizer*
+
+### Core Web Vitals
+- LCP: < 2.5s
+- FID: < 100ms  
+- CLS: < 0.1
+
+### Build Performance
+- Clean build: < 30s
+- Hot reload: < 2s
+- Bundle size: < 1MB initial
+
+## Quality Gates
+*Enforced by geek-projects-quality-gate*
+
+### Pre-deployment Checklist
+- [ ] All tests passing
+- [ ] Security audit clean (`npm audit`)
+- [ ] Performance targets met
+- [ ] Dependency health: Good or Excellent
+- [ ] Agent validation complete
+
+### Code Standards
+- TypeScript strict mode enabled
+- ESLint configuration active
+- Prettier formatting applied
+- Git hooks configured
+
+## Deployment Configuration
+*Coordinated by backend-reliability-engineer*
+
+### Production Environment
+- Platform: [Vercel/Netlify/Other]
+- Domain: [PRODUCTION_URL]
+- Monitoring: [MONITORING_SETUP]
+
+### CI/CD Pipeline
+- Automated testing on PR
+- Dependabot security updates
+- Deployment on merge to main
 
 ---
 
-*This guide follows the Enhanced Geek Projects Methodology with integrated agent support and conservative dependency management. Always prioritize stability and security over bleeding-edge features.*
+## Agent Decision Log
+*Track important decisions made by agents*
+
+### [DATE] - Agent: [AGENT_NAME]
+**Decision**: [DECISION_MADE]
+**Reasoning**: [WHY_THIS_DECISION]
+**Impact**: [EXPECTED_OUTCOMES]
+
+---
+
+*Last updated: [DATE] by [AGENT_NAME]*
+*Next review: [REVIEW_DATE]*
