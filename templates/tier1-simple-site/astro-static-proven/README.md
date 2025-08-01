@@ -1,6 +1,6 @@
 # Tier 1 Simple Site Starter
 
-## Enhanced Geek Projects Methodology - Tier 1 Template
+## Enhanced Geek Projects Methodology v4.1+ - Tier 1 Template
 
 Professional static site template built with Astro and Tailwind CSS. Perfect for business websites, portfolios, and marketing sites.
 
@@ -90,4 +90,4 @@ This is a Tier 1 template. For more complex needs:
 
 ---
 
-Built with Enhanced Geek Projects Methodology v4.1 for reliable, professional results.
+Built with Enhanced Geek Projects Methodology v4.1+ for reliable, professional results with business intelligence tracking.

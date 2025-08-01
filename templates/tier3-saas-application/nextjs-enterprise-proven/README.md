@@ -1,6 +1,6 @@
 # Tier 3 Enterprise SaaS Starter
 
-## Enhanced Geek Projects Methodology - Tier 3 Template
+## Enhanced Geek Projects Methodology v4.1+ - Tier 3 Template
 
 Production-ready enterprise SaaS application with multi-tenant architecture, advanced authentication, billing integration, and comprehensive business features.
 
@@ -234,7 +234,7 @@ This Tier 3 template provides enterprise-grade foundation with:
 - **Complete billing integration**
 - **Audit and compliance features**
 
-Built with Enhanced Geek Projects Methodology v4.1 for professional, reliable enterprise applications.
+Built with Enhanced Geek Projects Methodology v4.1+ for professional, reliable enterprise applications with comprehensive business intelligence.
 
 ### Next Steps
 1. Customize branding and content

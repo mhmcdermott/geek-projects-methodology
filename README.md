@@ -1,6 +1,6 @@
-# Enhanced Geek Projects Methodology
+# Enhanced Geek Projects Methodology v4.1+
 
-A systematic, agent-enhanced development methodology for building professional web applications using Claude AI as a development partner. This methodology integrates the proven E.P.C.T. (Explore → Plan → Code → Test) workflow with comprehensive dependency management and AI agent specialization.
+A systematic, sprint-based development methodology for building professional web applications with comprehensive business intelligence and client success management. This methodology delivers professional results across all project tiers through automated setup, proven templates, and systematic quality assurance.
 
 ## What This Methodology Solves
 
@@ -43,31 +43,46 @@ This methodology prevents these failures through:
 - **Specialist Knowledge On-Demand**: Access domain expertise without requiring every developer to be an expert in everything
 - **Systematic Quality Assurance**: Agents enforce methodology compliance and catch common mistakes
 
-## Project Classification System
+## Universal Project Classification System v4.1+
 
-### Tier 1: Simple Sites
+### 🚀 Quick Start
+```bash
+# Clone the methodology
+git clone https://github.com/mhmcdermott/geek-projects-methodology.git
+cd geek-projects-methodology
+
+# Create a new project (any tier)
+./scripts/setup-project-v4.1.sh "My Project Name" [1|2|3]
+
+# Examples:
+./scripts/setup-project-v4.1.sh "Portfolio Site" 1      # Tier 1: Simple Site
+./scripts/setup-project-v4.1.sh "Dashboard App" 2       # Tier 2: Interactive App  
+./scripts/setup-project-v4.1.sh "SaaS Platform" 3       # Tier 3: Enterprise SaaS
+```
+
+### Tier 1: Simple Sites (3 Sprints, 95+ Performance Target)
 **Examples**: Marketing sites, portfolios, blogs, landing pages  
-**Complexity**: Static or simple dynamic content  
-**Timeline**: 1-2 weeks  
-**Key Features**: Notion CMS, contact forms, SEO optimization, responsive design  
-**Agent Team**: Streamlined (frontend-ux-specialist, dependency-strategist, quality-gate)  
-**Success Pattern**: Fast delivery with professional quality standards
+**Technology**: Astro 5.1.1 + Tailwind CSS  
+**Timeline**: 1-2 weeks | **Sprint Count**: 3  
+**Template**: Complete Astro static site foundation  
+**Agent Team**: 3 core agents (streamlined efficiency)  
+**Business Intelligence**: Sprint progress tracking, client approval workflow
 
-### Tier 2: Interactive Apps  
+### Tier 2: Interactive Apps (6 Sprints, 90+ Performance Target)
 **Examples**: Dashboards, tools, user-facing applications  
-**Complexity**: Dynamic functionality, user accounts, data persistence  
-**Timeline**: 2-6 weeks  
-**Key Features**: User authentication, database operations, API integrations, interactive UIs  
-**Agent Team**: Comprehensive specialist team with security and performance focus  
-**Success Pattern**: Robust functionality with enterprise-grade quality
+**Technology**: Next.js 15.1.4 + React 19.1.1  
+**Timeline**: 3-6 weeks | **Sprint Count**: 6  
+**Template**: Complete Next.js interactive foundation  
+**Agent Team**: 8 comprehensive agents  
+**Business Intelligence**: Performance benchmarking, success metrics tracking
 
-### Tier 3: SaaS Applications
-**Examples**: Complex business applications, enterprise tools  
-**Complexity**: Multi-user, comprehensive feature sets, advanced integrations  
-**Timeline**: 2-6 months  
-**Key Features**: Enterprise auth, complex data relationships, third-party integrations  
-**Agent Team**: Full orchestrated team with enterprise coordination  
-**Success Pattern**: Scalable, secure, compliant business applications
+### Tier 3: SaaS Applications (12 Sprints, 85+ Performance Target)
+**Examples**: Enterprise applications, multi-tenant SaaS  
+**Technology**: Next.js + Prisma + NextAuth + Stripe  
+**Timeline**: 6-12 weeks | **Sprint Count**: 12  
+**Template**: Complete enterprise SaaS foundation  
+**Agent Team**: 12 enterprise agents  
+**Business Intelligence**: Comprehensive client success management
 
 ## Enhanced E.P.C.T. Methodology
 
@@ -139,23 +154,23 @@ This methodology prevents these failures through:
 
 ## AI Agent System
 
-### 🤖 Agent Installation Setup
+### 🤖 AI Agent System v4.1+
 
-**Prerequisites**: Before starting any project, install the agent system:
+**No Installation Required**: Agents are pre-integrated into the methodology templates.
 
+**Agent Activation**: Use standard Claude Code agent syntax:
 ```bash
-# Install core methodology agents
-cp agents/*.md ~/.claude/agents/
+# Project assessment and planning
+"Use epct-orchestrator to plan this [project type] project"
 
-# Install enhanced commands  
-cp templates/enhanced/epct-workflow.md ~/.claude/commands/
+# Technology decisions  
+"Use dependency-strategist to evaluate [technology choice]"
 
-# Verify installation
-ls ~/.claude/agents/
-# Should show all 12 agent files
+# Security implementation
+"Use security-threat-analyst to implement authentication"
 
-# Test agent system
-"Use epct-orchestrator to assess the agent system installation"
+# Performance optimization
+"Use performance-optimizer to improve Core Web Vitals"
 ```
 
 ### Agent Team Configurations
@@ -309,42 +324,74 @@ ls ~/.claude/agents/
 - **Dependency Health**: No build failures from package conflicts
 - **Learning**: Documented improvements after each project
 
-## Getting Started: Complete Workflow
+## Getting Started: Complete Workflow v4.1+
 
-### 🚀 New Project Checklist
+### 🚀 Automated Project Setup (5 minutes)
 
-**📋 Phase 1: Planning (Claude Chat - 2-8 hours)**
-- [ ] Create Notion project entry with tier classification
-- [ ] Use `epct-orchestrator` for project assessment
-- [ ] Copy and complete appropriate PRD template with agent assistance
-- [ ] Agent-coordinated task breakdown and timeline planning
+**Step 1: Clone Methodology**
+```bash
+git clone https://github.com/mhmcdermott/geek-projects-methodology.git
+cd geek-projects-methodology
+```
 
-**🔧 Phase 2: Setup (Claude Code - 2-4 hours)**  
-- [ ] Create GitHub repository with agent-validated structure
-- [ ] Install conservative dependency stack
-- [ ] Configure enhanced `CLAUDE.md` and `DEPENDENCY_STRATEGY.md`
-- [ ] Set up CI/CD with dependency testing automation
+**Step 2: Create Project (Automated)**
+```bash
+# Choose your project tier and run setup
+./scripts/setup-project-v4.1.sh "My Project Name" [1|2|3]
 
-**💻 Phase 3: Development (Claude Code - Days to Months)**
-- [ ] Implement features with specialist agent coordination
-- [ ] Apply quality gates after each major feature
-- [ ] Maintain dependency health with regular audits
-- [ ] Continuous security and performance validation
+# This automatically creates:
+# ✅ Complete project structure
+# ✅ Tier-appropriate starter template  
+# ✅ Customized CLAUDE.md with business intelligence
+# ✅ Sprint planning templates
+# ✅ Git repository with proper initial commit
+```
 
-**🚀 Phase 4: Launch (Claude Code + Chat - 4-8 hours)**
-- [ ] Comprehensive pre-launch validation by agent team
-- [ ] Production deployment with monitoring setup
-- [ ] Post-launch performance and security verification
-- [ ] Document lessons learned for methodology improvement
+**Step 3: Start Development**
+```bash
+cd my-project-name
+npm install
+npm run dev
+```
+
+### 📋 Sprint-Based Development Workflow
+
+**Sprint Planning Phase**
+- [ ] Review sprint focus in CLAUDE.md
+- [ ] Complete feature specification using templates
+- [ ] Get stakeholder approval on sprint scope
+
+**Sprint Implementation Phase**  
+- [ ] Implement ONE feature per sprint exactly as specified
+- [ ] Use tier-appropriate agent team for specialist expertise
+- [ ] Apply quality gates throughout development
+
+**Sprint Review Phase**
+- [ ] Client checkpoint: demonstrate completed feature
+- [ ] Collect feedback and approval
+- [ ] Update success metrics and business intelligence
+- [ ] Plan next sprint based on approved roadmap
 
 ## Emergency Procedures
 
-### Build Failures
-1. **Use `code-analyzer-debugger`** to investigate the specific error
-2. **Check `dependency-strategist`** for package conflicts or version issues
-3. **Clear caches systematically**: `.next`, `node_modules`, build cache
-4. **Verify environment variables** and configuration files
-5. **Test in clean environment** to isolate the issue
+### Build Failures (Battle-Tested Protocol)
+```bash
+# Step 1: Clear Next.js cache (fixes 90% of issues)
+rm -rf .next
+
+# Step 2: Reinstall dependencies if needed  
+npm install
+
+# Step 3: Nuclear option if still failing
+rm -rf node_modules && npm install
+
+# Step 4: Check for peer dependency warnings
+npm ls
+
+# Step 5: Verify TypeScript configuration
+npx tsc --noEmit
+```
+**Always start with `rm -rf .next` - based on real project experience.**
 
 ### Security Issues  
 1. **Use `security-threat-analyst`** to assess vulnerability impact
@@ -418,8 +465,29 @@ ls ~/.claude/agents/
 
 ---
 
-**Status**: Production-ready methodology with comprehensive agent system  
-**Last Updated**: January 2025  
-**Version**: Enhanced E.P.C.T. v2.0 with Full Agent Integration
+---
 
-This methodology transforms web development from reactive problem-solving to proactive, expert-guided implementation, ensuring consistent professional quality while preventing the repetition of common development failures.
+## 🎯 Why Enhanced Geek Projects Methodology v4.1+ Works
+
+### Universal Applicability  
+- **Any Project Tier**: From simple sites to enterprise SaaS with appropriate complexity scaling
+- **Professional Results**: Systematic development that matches working with experienced human teams  
+- **Business Intelligence**: Comprehensive tracking and client success management
+
+### Proven Technology Stacks
+- **Tier 1**: Astro 5.1.1 + Tailwind CSS (optimized for performance)
+- **Tier 2**: Next.js 15.1.4 + React 19.1.1 (interactive applications)  
+- **Tier 3**: Full enterprise stack with Prisma + NextAuth + Stripe
+
+### Automated Excellence
+- **5-Minute Setup**: Complete project initialization with one command
+- **Quality Assurance**: Built-in performance targets and success metrics
+- **Client Success**: Sprint-based development with systematic approval workflows
+
+---
+
+**Status**: Production-ready methodology with automated setup and business intelligence  
+**Last Updated**: January 2025  
+**Version**: Enhanced Geek Projects Methodology v4.1+ with Universal Templates
+
+Transform any web development project into a professional, systematic delivery experience with comprehensive business intelligence and client success management.
