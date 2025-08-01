@@ -65,7 +65,7 @@ fi
 # Convert project name to directory-safe format
 PROJECT_DIR=$(echo "$PROJECT_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
 
-print_info "🚀 Enhanced Geek Projects Methodology v4.1"
+print_info "🚀 Enhanced Geek Projects Methodology v4.1+"
 print_info "Setting up: $PROJECT_NAME (Tier $PROJECT_TIER)"
 print_info "Directory: $PROJECT_DIR"
 
@@ -81,31 +81,39 @@ cd "$PROJECT_DIR"
 
 print_success "Created project directory"
 
-# Determine tier-specific setup
+# Determine tier-specific setup with v4.1+ enhancements
 case $PROJECT_TIER in
     1)
         TIER_NAME="Simple Site"
         TEMPLATE_DIR="tier1-simple-site/astro-static-proven"
         AGENTS="3 core agents: frontend-ux-specialist, dependency-strategist, geek-projects-quality-gate"
         TIMELINE="1-2 weeks"
+        SPRINT_COUNT="3"
+        PERFORMANCE_TARGET="95+"
         ;;
     2)
         TIER_NAME="Interactive App"
         TEMPLATE_DIR="tier2-interactive-app/nextjs-full-stack-stable"
         AGENTS="8 comprehensive agents including authentication and database specialists"
         TIMELINE="3-6 weeks"
+        SPRINT_COUNT="6"
+        PERFORMANCE_TARGET="90+"
         ;;
     3)
         TIER_NAME="SaaS Application"
         TEMPLATE_DIR="tier3-saas-application/nextjs-enterprise-proven"
         AGENTS="12 enterprise agents including billing, security, and performance specialists"
         TIMELINE="6-12 weeks"
+        SPRINT_COUNT="12"
+        PERFORMANCE_TARGET="85+"
         ;;
 esac
 
 print_info "Project Type: $TIER_NAME"
 print_info "Agent Team: $AGENTS"
 print_info "Timeline: $TIMELINE"
+print_info "Sprint Count: $SPRINT_COUNT sprints"
+print_info "Performance Target: $PERFORMANCE_TARGET"
 
 # Get the absolute path to the methodology directory
 METHODOLOGY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -137,7 +145,21 @@ if [ -f "$CLAUDE_TEMPLATE" ]; then
         SED_CMD="sed"
     fi
     
+    # Project Classification & Enhanced Properties
     $SED_CMD -i "s/\[AUTO-POPULATED from directory name\]/$PROJECT_NAME/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[1: Simple Site \/ 2: Interactive App \/ 3: SaaS Application\]/$PROJECT_TIER: $TIER_NAME/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[3 for Tier 1 \/ 6 for Tier 2 \/ 12 for Tier 3\]/$SPRINT_COUNT/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[X of Y\] - \[Current sprint focus\]/1 of $SPRINT_COUNT - Project setup and foundation/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[Tier 1 (Astro) \/ Tier 2 (Next.js) \/ Tier 3 (SaaS)\]/Tier $PROJECT_TIER ($TIER_NAME)/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[Configured agents for this tier\]/$AGENTS/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[95+ for Tier 1 \/ 90+ for Tier 2 \/ 85+ for Tier 3\]/$PERFORMANCE_TARGET/g" ./CLAUDE.md
+    
+    # Current Sprint Specifications  
+    $SED_CMD -i "s/\[X\] Focus\]: \[Specific feature\/component being built this sprint\]/1 Focus]: Project foundation and initial setup/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[Detailed requirements for sprint completion\]/Complete project setup, configure development environment, prepare for feature development/g" ./CLAUDE.md
+    $SED_CMD -i "s/\[Date\/schedule for sprint review and approval\]/Week 1 - Setup review with stakeholder/g" ./CLAUDE.md
+    
+    # Legacy replacements for compatibility
     $SED_CMD -i "s/\[AUTO-DETECTED from package.json and structure\]/$TIER_NAME/g" ./CLAUDE.md
     $SED_CMD -i "s/\[AUTO-ASSIGNED based on complexity analysis\]/Tier $PROJECT_TIER/g" ./CLAUDE.md
     $SED_CMD -i "s/\[DETECTED_TIER\]/Tier $PROJECT_TIER/g" ./CLAUDE.md
@@ -206,7 +228,7 @@ if [ ! -f "README.md" ]; then
 3. Begin Sprint 1 implementation
 4. Follow systematic development process
 
-Built with Enhanced Geek Projects Methodology v4.1 for professional results.
+Built with Enhanced Geek Projects Methodology v4.1+ for professional results with business intelligence tracking.
 EOF
     print_success "README.md created"
 fi
@@ -243,15 +265,17 @@ fi
 
 # Create initial commit
 git add .
-git commit -m "Initial project setup with Enhanced Geek Projects Methodology v4.1
+git commit -m "Initial project setup with Enhanced Geek Projects Methodology v4.1+
 
 - Project: $PROJECT_NAME
 - Tier: $PROJECT_TIER ($TIER_NAME)
+- Sprint Count: $SPRINT_COUNT sprints
+- Performance Target: $PERFORMANCE_TARGET
 - Template: $TEMPLATE_DIR
 - Agent Team: $AGENTS
 - Timeline: $TIMELINE
 
-Ready for systematic development!" --quiet
+Ready for systematic development with business intelligence tracking!" --quiet
 
 print_success "Initial commit created"
 
@@ -263,6 +287,8 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "  Project: $PROJECT_NAME"
 echo "  Directory: $PROJECT_DIR"
 echo "  Tier: $PROJECT_TIER ($TIER_NAME)"
+echo "  Sprint Count: $SPRINT_COUNT sprints"
+echo "  Performance Target: $PERFORMANCE_TARGET"
 echo "  Timeline: $TIMELINE"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
@@ -301,11 +327,19 @@ echo "   - Follow one feature per sprint approach"
 echo "   - Use agent team for tier-appropriate expertise"
 echo "   - Maintain client checkpoints for approval"
 echo ""
-echo "📖 Methodology Compliance:"
-echo "   ✅ Universal template system"
-echo "   ✅ Tier-appropriate agent team"
-echo "   ✅ Sprint-based development planning"
-echo "   ✅ Systematic quality assurance"
+echo "📖 Methodology Compliance v4.1+:"
+echo "   ✅ Universal template system with business intelligence"
+echo "   ✅ Tier-appropriate agent team coordination"
+echo "   ✅ Sprint-based development with client checkpoints"
+echo "   ✅ Performance targets and success metrics tracking"
+echo "   ✅ Systematic quality assurance and client approval workflow"
 echo ""
-echo "Built with Enhanced Geek Projects Methodology v4.1"
-echo "Professional development results guaranteed! 🎯"
+echo "📊 Business Intelligence Features:"
+echo "   • Sprint progress tracking ($SPRINT_COUNT total sprints)"
+echo "   • Performance score monitoring (target: $PERFORMANCE_TARGET)"
+echo "   • Client approval workflow management"
+echo "   • Quality gate validation system"
+echo "   • Success metrics and benchmarking"
+echo ""
+echo "Built with Enhanced Geek Projects Methodology v4.1+"
+echo "Professional development results with business intelligence! 🎯"
