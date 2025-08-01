@@ -14,12 +14,9 @@ ls ~/.claude/agents/
 
 ### Install Enhanced E.P.C.T. Commands
 ```bash
-# Copy enhanced workflow commands
-cp templates/enhanced/epct-workflow.md ~/.claude/commands/
+# No additional workflow commands needed - agents work directly
 
-# Verify installation
-ls ~/.claude/commands/
-# Should show: epct-workflow.md
+# Agents work directly in Claude Code without additional setup
 ```
 
 ## 🧪 Agent System Verification
@@ -70,7 +67,7 @@ Open Claude Code in any project and test each agent:
   - [ ] dependency-strategist.md
   - [ ] epct-orchestrator.md
   - [ ] geek-projects-quality-gate.md
-- [ ] **Enhanced commands installed**: `~/.claude/commands/epct-workflow.md`
+- [ ] **Agents work directly**: No additional commands needed
 - [ ] **Agent activation tested**: All three agents respond correctly
 - [ ] **Methodology compliance**: Agents demonstrate knowledge of conservative dependency approach
 

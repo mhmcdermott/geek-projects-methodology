@@ -1,0 +1,50 @@
+# Dependabot configuration for Geek Projects methodology
+# Conservative approach: security patches only for critical dependencies
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/London"
+    
+    # Conservative approach: ignore major/minor updates for critical dependencies
+    ignore:
+      # React ecosystem - pin to stable major versions
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      
+      # Tailwind CSS - avoid v4 beta breaking changes
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
+      
+      # Next.js - test major updates manually
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      
+      # TypeScript - major updates can break compatibility
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+    
+    # Add labels to dependency PRs for easy identification
+    labels:
+      - "dependencies"
+      - "automated-pr"
+    
+    # Add reviewers for critical dependency updates
+    reviewers:
+      - "mhmcdermott"
+    
+    # Configure PR messages
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+    
+    # Limit number of open PRs to avoid overwhelming
+    open-pull-requests-limit: 5

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Geek Projects - Professional Web Development",
-  description: "Built with the Enhanced Geek Projects Methodology v4.0",
+  description: "Built with the Enhanced Geek Projects Methodology v4.1+",
 };
 
 export default function RootLayout({

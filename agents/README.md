@@ -126,9 +126,9 @@ cp agents/*.md ~/.claude/agents/
 ## 🔧 Integration with Enhanced Methodology
 
 These agents are designed to work seamlessly with:
-- **Enhanced E.P.C.T. Workflow** (`../templates/enhanced/epct-workflow.md`)
+- **Enhanced Geek Projects Methodology v4.1+** Sprint-based development
 - **Conservative Dependency Strategy** (`../docs/DEPENDENCY_STRATEGY.md`)
-- **Enhanced CLAUDE.md Template** (`../templates/enhanced/claude-md-template.md`)
+- **Universal CLAUDE.md Template** (`../templates/CLAUDE.md`)
 
 ## 📊 Agent Status
 
@@ -164,4 +164,4 @@ All core agents are now implemented and ready for use:
 
 **Status**: Core agents implemented, methodology ready for production use
 **Last Updated**: July 2025
-**Methodology Version**: Enhanced E.P.C.T. v2.0
+**Methodology Version**: Enhanced Geek Projects Methodology v4.1+

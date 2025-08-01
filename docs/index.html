@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geek Projects Methodology v4.0</title>
+    <title>Enhanced Geek Projects Methodology v4.1+</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="font-['Inter'] bg-white">
     <header class="bg-gray-900 text-white py-8">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl font-bold font-['Playfair_Display']">Enhanced Geek Projects Methodology v4.0</h1>
+            <h1 class="text-4xl font-bold font-['Playfair_Display']">Enhanced Geek Projects Methodology v4.1+</h1>
             <p class="text-xl mt-2">Bulletproof web development with proven templates</p>
         </div>
     </header>
@@ -22,10 +22,10 @@
                 <pre class="text-sm"><code># 1. Clone methodology repository
 git clone https://github.com/mhmcdermott/geek-projects-methodology.git
 
-# 2. Copy tier template
-cp -r templates-v4/tier2-interactive-app/nextjs-full-stack-stable/ my-project/
+# 2. Create new project (automated)
+./scripts/setup-project-v4.1.sh "My Project" 2
 
-# 3. Install and run
+# 3. Start development
 cd my-project
 npm install
 npm run dev</code></pre>
@@ -33,7 +33,7 @@ npm run dev</code></pre>
         </section>
         
         <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">Key Improvements in v4.0</h2>
+            <h2 class="text-3xl font-bold mb-6">Key Features in v4.1+</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-blue-50 p-6 rounded-lg">
                     <h3 class="text-xl font-bold mb-3">Bulletproof Templates</h3>
@@ -57,9 +57,9 @@ npm run dev</code></pre>
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-6">Template Structure</h2>
             <div class="bg-gray-50 p-6 rounded-lg">
-                <pre class="text-sm"><code>templates-v4/
+                <pre class="text-sm"><code>templates/
 ├── tier1-simple-site/
-│   └── nextjs-static-proven/
+│   └── astro-static-proven/
 ├── tier2-interactive-app/
 │   └── nextjs-full-stack-stable/
 │       ├── package.json              # Exact working versions
@@ -78,7 +78,7 @@ npm run dev</code></pre>
                 <h3 class="text-lg font-bold mb-3">⚠️ Critical Dependencies (Locked Versions)</h3>
                 <ul class="space-y-1 text-sm font-mono">
                     <li>• Next.js: 15.1.4 (stable)</li>
-                    <li>• React: 19.0.0-rc-02c0e824-20241028 (tested)</li>
+                    <li>• React: 19.1.1 (stable)</li>
                     <li>• Tailwind CSS: 3.4.17 (NO v4 beta)</li>
                     <li>• TypeScript: 5.7.3 (strict mode)</li>
                     <li>• @types/react: 18.3.12 (compatible)</li>
@@ -87,7 +87,7 @@ npm run dev</code></pre>
             <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-400 mt-4">
                 <h3 class="text-lg font-bold mb-3">❌ Never Use (Proven Problematic)</h3>
                 <ul class="space-y-1 text-sm">
-                    <li>• react@19.1.1 - Causes Next.js 15 conflicts</li>
+                    <li>• react@19.0.0-rc - Release candidates can be unstable</li>
                     <li>• tailwindcss@4.x - Beta version with build failures</li>
                     <li>• @types/react@19.x - Type conflicts</li>
                     <li>• Any @canary or @beta packages</li>
@@ -119,7 +119,7 @@ npm run dev</code></pre>
 
     <footer class="bg-gray-100 py-8 mt-16">
         <div class="max-w-4xl mx-auto px-4 text-center text-gray-600">
-            <p>Enhanced Geek Projects Methodology v4.0 - Professional Web Development</p>
+            <p>Enhanced Geek Projects Methodology v4.1+ - Professional Web Development with Business Intelligence</p>
             <p class="mt-2">Built for reliability, designed for speed, optimized for success</p>
         </div>
     </footer>

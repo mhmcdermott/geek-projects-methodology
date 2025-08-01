@@ -6,7 +6,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-gradient mb-6">
-              Built with Enhanced Geek Projects Methodology v4.0
+              Built with Enhanced Geek Projects Methodology v4.1+
             </h1>
             <p className="text-xl md:text-2xl text-primary-700 mb-8 leading-relaxed">
               This template demonstrates the bulletproof foundation for professional web applications.
