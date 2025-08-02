@@ -297,41 +297,66 @@ project-name/
 - [ ] Client checkpoint materials prepared
 - [ ] Ready for stakeholder review and approval
 
-### Enhanced Sprint Structure v4.1+
+### Enhanced Sprint Structure v4.2+
 
-**⚠️ CRITICAL METHODOLOGY ENHANCEMENT**: Client Review Phase Mandatory
+**⚠️ CRITICAL METHODOLOGY ENHANCEMENT**: Two-Phase Client Review Process
 
-For projects approaching final development phases, implement **Sprint X.5: Client Review & Content Refinement** as a mandatory phase between feature completion and quality assurance.
+For projects approaching final development phases, implement **Sprint X.5: Visual Enhancement & Client Approval** as a mandatory two-phase process between feature completion and quality assurance.
 
-#### Sprint X.5: Client Review & Content Refinement (MANDATORY)
+#### Sprint X.5a: Visual Enhancement Implementation (MANDATORY)
 
-**Purpose**: Ensure client approval before quality assurance phase
-**Duration**: 1-2 weeks (depending on project tier)
-**Critical Rule**: Never proceed to QA without formal client approval
+**Purpose**: Inspiration-driven visual improvements while maintaining functionality
+**Duration**: 3-5 days (depending on project tier and complexity)
+**Critical Rule**: Implement systematic visual enhancements based on approved inspiration sources
+
+##### Visual Enhancement Process
+- [ ] **Inspiration Analysis**: Receive and analyze up to 3 website screenshots for enhancement ideas
+- [ ] **Enhancement Proposal**: Propose specific improvements across layout, typography, components, and colors
+- [ ] **Technical Feasibility**: Assess implementation complexity and performance impact
+- [ ] **Systematic Implementation**: Apply approved enhancements while preserving all functionality
+- [ ] **Quality Validation**: Ensure zero regression and maintained performance scores
+
+##### Focus Areas for Enhancement
+- [ ] **Layout & Spacing**: Visual hierarchy, section spacing, white space optimization
+- [ ] **Color & Typography**: Brand refinement, readability improvements, consistent styling
+- [ ] **Component Enhancement**: Button design, cards, forms, navigation, interactive elements
+- [ ] **Performance Preservation**: Maintain or improve Lighthouse scores and Core Web Vitals
+
+##### Technical Safety Protocols
+- [ ] **Pre-Enhancement Baseline**: Git tagging and safety checkpoints before changes
+- [ ] **Incremental Implementation**: Logical enhancement groups with individual commits
+- [ ] **Cross-Device Testing**: Validate enhancements across all screen sizes and browsers
+- [ ] **Rollback Procedures**: Emergency rollback protocols if issues arise
+
+#### Sprint X.5b: Client Approval Facilitation (MANDATORY)
+
+**Purpose**: Comprehensive client review and formal approval of enhanced project
+**Duration**: 2-3 days (depending on stakeholder availability and feedback)
+**Critical Rule**: Never proceed to QA without formal written client approval
 
 ##### Client Review Process
-- [ ] Comprehensive site/application walkthrough with all stakeholders
-- [ ] Content validation (copy, messaging, tone, accuracy)
-- [ ] Visual refinement feedback (layout, spacing, components, branding)
-- [ ] Brand alignment validation (colors, typography, visual hierarchy)
-- [ ] User experience review (navigation, CTAs, mobile responsiveness)
-- [ ] Business logic validation (services, pricing, process flows)
+- [ ] **Enhanced Project Walkthrough**: Present visually improved site/application to stakeholders
+- [ ] **Content Validation**: Review copy, messaging, tone, and accuracy
+- [ ] **Visual Enhancement Review**: Validate improved layout, typography, and component styling
+- [ ] **Brand Alignment Confirmation**: Ensure enhanced design meets brand expectations
+- [ ] **User Experience Validation**: Test navigation, interactions, and mobile responsiveness
+- [ ] **Business Logic Review**: Confirm services, pricing, and process flows remain accurate
 
-##### Refinement Implementation
-- [ ] Content adjustments based on client feedback
-- [ ] Layout modifications for improved visual hierarchy
-- [ ] Brand fine-tuning and messaging optimization
-- [ ] UX enhancements and interaction improvements
-- [ ] Mobile responsiveness refinements
-- [ ] Performance optimizations based on usage patterns
+##### Documentation & Approval Package
+- [ ] **Visual Enhancement Summary**: Complete list of improvements implemented
+- [ ] **Before/After Comparison**: Documentation of visual changes and improvements
+- [ ] **Performance Impact Report**: Lighthouse scores and technical validation
+- [ ] **Cross-Device Compatibility**: Mobile, tablet, desktop validation confirmation
+- [ ] **Technical Quality Assurance**: Functionality preservation and code quality verification
 
 ##### Client Approval Checkpoint
-- [ ] Formal written sign-off on final content and design
-- [ ] Change lock implementation (no further content changes)
-- [ ] QA authorization (client approval required before quality gates)
-- [ ] Final scope confirmation and acceptance
+- [ ] **Formal Written Approval**: Email or document confirmation of enhanced project state
+- [ ] **Enhancement Acceptance**: Client approval of all visual improvements implemented
+- [ ] **Content and Design Lock**: No further changes without scope adjustment
+- [ ] **QA Authorization**: Clear approval to proceed to quality assurance phase
+- [ ] **Final Scope Confirmation**: Project scope and deliverables confirmed and accepted
 
-**🚨 MANDATORY**: Only proceed to quality assurance after formal client approval
+**🚨 MANDATORY**: Complete both Sprint X.5a and X.5b before proceeding to quality assurance
 
 ### Client Checkpoint Process
 1. **Sprint Review**: Present completed sprint deliverables
