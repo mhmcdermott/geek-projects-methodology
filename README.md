@@ -476,6 +476,36 @@ npx tsc --noEmit
 
 ---
 
+## CRITICAL METHODOLOGY ENHANCEMENT - Sprint X.5
+
+### Sprint X.5: Client Review & Content Refinement (MANDATORY)
+
+**Discovery**: Real-world implementation revealed missing client review phase between development and QA.
+
+**Universal Sprint Structure Update**:
+- Sprint X: Advanced Features & Initial Build
+- **Sprint X.5: Client Review & Content Refinement** (NEW MANDATORY PHASE)
+- Sprint X+1: Quality Assurance & Launch (Final approved version only)
+
+#### Why Sprint X.5 is Critical
+- **Prevents QA Validating Changing Content**: Quality assurance tests final approved version only
+- **Eliminates Post-Quality-Gate Rework**: All stakeholder feedback addressed before technical validation
+- **Ensures Professional Project Delivery**: Systematic client approval process
+- **Manages Client Expectations**: Clear approval checkpoint and change control
+
+#### Sprint X.5 Implementation by Tier
+**Tier 1 (Simple Sites)**: Sprint 3.5 - Content and visual refinement with stakeholder approval
+**Tier 2 (Interactive Apps)**: Sprint 5.5 - Comprehensive functionality and UX review with all stakeholders  
+**Tier 3 (SaaS Applications)**: Sprint 11.5 - Executive review and strategic alignment validation
+
+#### Sprint X.5 Universal Process
+1. **Comprehensive Stakeholder Walkthrough**: Every page, every section with decision-makers
+2. **Content and UX Refinement**: Copy, layout, brand alignment, and user experience improvements  
+3. **Formal Written Approval**: Documented sign-off before quality assurance phase
+4. **Content Lock Implementation**: No changes without scope adjustment after approval
+
+**Status**: Enhancement validated through Catalyst Events project implementation - now mandatory for all v4.1+ projects.
+
 ---
 
 ## 🎯 Why Enhanced Geek Projects Methodology v4.1+ Works
