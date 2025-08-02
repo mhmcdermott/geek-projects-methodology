@@ -105,6 +105,12 @@ npm run dev
 - `next.config.ts` - Optimized configuration
 - `tsconfig.json` - Strict TypeScript setup
 
+### Enhanced Methodology Templates v4.1+
+- `CLAUDE.md` - Universal development guide with Sprint X.5 client review phase
+- `client-review-checklist.md` - Comprehensive client review and approval template
+- `planning/sprint-planning-template.md` - Enhanced sprint planning with client review phase
+- `planning/feature-specification-template.md` - Detailed feature specification template
+
 ### Custom Utilities
 - `.btn-primary` - Primary button styling
 - `.btn-secondary` - Secondary button styling  
