@@ -500,8 +500,16 @@ npx tsc --noEmit
 
 ### Project Templates
 - [Simple Site PRD Template](templates/simple-site-prd.md) - Tier 1 projects
-- [Interactive App PRD Template](templates/interactive-app-prd.md) - Tier 2 projects  
+- [Interactive App PRD Template](templates/interactive-app-prd.md) - Tier 2 projects
 - [SaaS Application PRD Template](templates/saas-app-prd.md) - Tier 3 projects
+
+### Claude Code Custom Commands
+All Geek Projects templates include these development workflow commands:
+- **/fresh-dev** - Kill zombie processes, clear cache, restart dev server
+- **/clean-logs** - Remove debug console.log statements before commits
+- **/deploy** - Run build, commit changes, push to trigger deployment
+
+These commands are located in `templates/.claude/commands/` and are automatically included when creating new projects.
 
 ### Quality Checklists
 - [Security Checklist](checklists/security-checklist.md) - Security validation requirements

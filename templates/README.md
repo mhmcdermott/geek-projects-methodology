@@ -72,13 +72,50 @@ npm run dev
 - ❌ `@types/react@19.x` - Type conflicts with React 19 RC
 - ❌ Any `@canary` or `@beta` packages
 
+## 🤖 Claude Code Custom Commands
+
+All templates include these workflow automation commands in `.claude/commands/`:
+
+### /fresh-dev - Dev Server Reset
+Kill zombie processes, clear Next.js cache, restart dev server
+```bash
+# Automatically:
+# 1. Kills all "npm run dev" processes
+# 2. Removes .next cache directory
+# 3. Starts fresh dev server on port 3000
+```
+**Use when**: Hot module reloading fails or stale cache issues appear
+
+### /clean-logs - Debug Cleanup
+Remove debug console.log statements before committing
+```bash
+# Automatically:
+# 1. Searches for console.log in src/
+# 2. Reviews each to identify debug vs intentional logging
+# 3. Removes debug logs, preserves console.error
+# 4. Reports which files were modified
+```
+**Use when**: Before committing code or creating pull requests
+
+### /deploy - Production Deployment
+Build, commit, and push changes to trigger Vercel deployment
+```bash
+# Automatically:
+# 1. Runs npm run build to verify success
+# 2. Creates conventional commit with detailed message
+# 3. Pushes to master branch
+# 4. Confirms Vercel deployment triggered
+```
+**Use when**: Ready to deploy to production (only if build succeeds)
+
 ## 🛟 Emergency Procedures
 
 ### Build Failure Protocol
-1. **Don't debug** - immediate nuclear reset
-2. **Use proven template** - exact copy, no modifications
-3. **Document issue** for methodology improvement
-4. **Never let client wait** for debugging
+1. **Try /fresh-dev first** - clears cache and restarts dev server
+2. **Don't debug** - immediate nuclear reset if /fresh-dev fails
+3. **Use proven template** - exact copy, no modifications
+4. **Document issue** for methodology improvement
+5. **Never let client wait** for debugging
 
 ### Timeline Emergency
 1. **Switch to static fallback** immediately
