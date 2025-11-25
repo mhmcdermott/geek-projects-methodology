@@ -42,11 +42,11 @@
 
 ### Dependency Management Strategy
 
-#### Critical Dependencies (Conservative Pinning)
-- **React & React-DOM**: Pin to stable major version (e.g., "19.1.1")
-- **Tailwind CSS**: Stay on stable v3.x, avoid v4 beta
-- **Next.js**: Pin to tested stable version
-- **TypeScript**: Pin to compatible version
+#### Critical Dependencies (Stability-First Pinning)
+- **React & React-DOM**: ^19.1.0 (stable)
+- **Tailwind CSS**: ^4.1.0 (stable since January 2025)
+- **Next.js**: ^15.3.0 (stable)
+- **TypeScript**: ^5.7.0 (stable)
 
 #### Update Testing Requirements
 - [ ] Create feature branch for dependency updates

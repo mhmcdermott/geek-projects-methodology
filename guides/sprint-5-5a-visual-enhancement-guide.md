@@ -6,6 +6,40 @@
 
 Sprint 5.5a: Visual Enhancement Implementation is the first phase of the enhanced Sprint 5.5 process, focusing on inspiration-driven visual improvements while maintaining all functionality and performance standards.
 
+## Recommended: Enable Frontend-Design Plugin
+
+Before beginning Sprint 5.5a, enable the `frontend-design` plugin to generate **distinctive, production-grade interfaces** that avoid generic AI aesthetics.
+
+### Plugin Setup
+```bash
+# Add Anthropic's official marketplace (one-time)
+/plugin marketplace add anthropics/claude-code
+
+# Install frontend-design plugin
+/plugin install frontend-design@claude-code-plugins
+
+# Restart Claude Code to activate
+```
+
+### Why Use This Plugin for Sprint 5.5a?
+- **Bold aesthetic choices**: Creates distinctive typography and color palettes
+- **Context-aware design**: Matches aesthetics to your specific project needs
+- **Production-ready code**: High-quality implementations with attention to detail
+- **Avoids generic styling**: No templated, default-looking interfaces
+
+### Plugin Usage During Sprint 5.5a
+When implementing visual enhancements, describe your design needs naturally:
+- "Enhance the hero section with more visual impact and distinctive typography"
+- "Refine the card components with premium styling and subtle interactions"
+- "Improve the color system with bolder, more confident brand application"
+
+The plugin will generate code that aligns with the "confident restraint" methodology while delivering distinctive visual results.
+
+**Important**: Review all plugin-generated code against:
+- React 19.x / Tailwind CSS 4.x stack
+- WCAG 2.1 AA accessibility standards
+- Core Web Vitals performance targets
+
 ## Core Responsibilities
 
 ### 1. Inspiration Analysis & Enhancement Proposal

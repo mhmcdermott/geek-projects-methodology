@@ -73,43 +73,55 @@
 {
   "@astrojs/starlight": "^0.28.0",
   "astro": "^5.1.1",
-  "tailwindcss": "^3.4.17",
-  "typescript": "^5.7.3"
+  "tailwindcss": "^4.1.0",
+  "typescript": "^5.7.0"
 }
 ```
 
-#### Tier 2: Interactive App Stack  
+#### Tier 2: Interactive App Stack
 ```json
 {
-  "next": "^15.1.4",
-  "react": "19.1.1",
-  "react-dom": "19.1.1",
+  "next": "^15.3.0",
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
   "@types/react": "^19.0.2",
   "@types/react-dom": "^19.0.2",
-  "tailwindcss": "^3.4.17",
-  "typescript": "^5.7.3"
+  "tailwindcss": "^4.1.0",
+  "typescript": "^5.7.0"
 }
 ```
 
 #### Tier 3: Enterprise SaaS Stack
 ```json
 {
-  "next": "^15.1.4",
-  "react": "19.1.1",
+  "next": "^15.3.0",
+  "react": "^19.1.0",
   "@prisma/client": "^6.2.1",
   "@auth/prisma-adapter": "^3.7.3",
   "stripe": "^18.6.0",
-  "tailwindcss": "^3.4.17",
-  "typescript": "^5.7.3"
+  "tailwindcss": "^4.1.0",
+  "typescript": "^5.7.0"
+}
+```
+
+### Tailwind CSS v4 Configuration (New Projects)
+Tailwind v4 uses CSS-first configuration - no `tailwind.config.js` required:
+```css
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: #3b82f6;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 ```
 
 ### Universal Critical Avoidance List
-- **Tailwind CSS v4**: Beta - causes build failures across all tiers
 - **Beta/pre-release packages**: Never use without extensive testing
-- **Unvetted React 19 libraries**: Compatibility varies by tier
+- **Unvetted React 19 libraries**: Verify compatibility before use
 - **Experimental features**: Wait for stable release
 - **Version mismatches**: Always check compatibility matrix
+- **Tailwind v4 plugin compatibility**: Verify third-party plugins support v4
 
 ### Dependency Health Monitoring
 - **Security audits**: Weekly via `npm audit`
@@ -129,7 +141,7 @@
 ### Version Conflicts
 1. Use dependency-strategist for conflict analysis
 2. Review package-lock.json for duplicate packages
-3. Check for beta version incompatibilities (especially Tailwind v4)
+3. Check for Tailwind v4 plugin compatibility issues
 4. Use `npm ls` to identify conflict sources
 5. Document resolution below
 

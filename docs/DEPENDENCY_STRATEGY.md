@@ -2,7 +2,7 @@
 
 ## Project: [PROJECT_NAME]
 **Last Updated**: [DATE]
-**Strategy Version**: 1.0
+**Strategy Version**: 2.0
 
 ## Core Principles
 
@@ -11,29 +11,72 @@
 - **Avoid beta/pre-release** versions in production
 - **Security patches only** for automated updates
 - **Manual review required** for framework updates
+- **Test on feature branch** before merging dependency updates
 
-## Current Dependency Pinning
+## Current Dependency Pinning (New Projects)
 
 ### Critical Dependencies (Pinned)
 ```json
 {
-  "react": "19.1.1",
-  "react-dom": "19.1.1", 
-  "tailwindcss": "^3.4.17",
-  "next": "15.3.2",
-  "typescript": "^5.6.3"
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
+  "tailwindcss": "^4.1.0",
+  "next": "^15.3.0",
+  "typescript": "^5.7.0"
 }
 ```
 
-**Reasoning**: These versions are tested and stable. Updates require manual testing.
+**Reasoning**: These versions are tested and stable as of November 2025. Updates require manual testing.
 
-## Known Problematic Dependencies
+### Legacy Projects (Tailwind v3)
+```json
+{
+  "tailwindcss": "^3.4.17"
+}
+```
+Existing projects on Tailwind v3 can remain stable. Migration to v4 is recommended but not required.
 
-### Tailwind CSS v4
-- **Status**: Currently in beta
-- **Issue**: Breaking changes and compatibility issues
-- **Action**: Stay on v3.x until v4 reaches stable release
-- **Monitor**: Track v4 stable release announcements
+## Tailwind CSS v4 (Stable - Default for New Projects)
+
+### Status Update (November 2025)
+- **Released**: January 22, 2025 (stable)
+- **Current**: v4.1.x
+- **Recommendation**: Use v4 for all new projects
+
+### Key Changes from v3
+- **CSS-first configuration**: No `tailwind.config.js` required
+- **Automatic content detection**: No manual content paths needed
+- **First-party Vite plugin**: `@tailwindcss/vite`
+- **Performance**: 5-100x faster builds
+
+### New Project Setup (Tailwind v4)
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+```css
+/* app/globals.css */
+@import "tailwindcss";
+```
+
+```ts
+// vite.config.ts (or next.config.ts with Vite)
+import tailwindcss from '@tailwindcss/vite'
+
+export default {
+  plugins: [tailwindcss()]
+}
+```
+
+### Migration Guide (v3 → v4)
+For existing projects, see official migration guide: https://tailwindcss.com/docs/upgrade-guide
+
+## Known Considerations
+
+### Tailwind v4 Plugin Compatibility
+- Check third-party Tailwind plugins for v4 support before using
+- `@tailwindcss/forms`, `@tailwindcss/typography` have v4 versions
+- Some community plugins may still require v3
 
 ## Update Testing Procedures
 

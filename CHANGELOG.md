@@ -8,14 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Frontend-Design Plugin Integration** for enhanced visual design generation
+  - Plugin installation guidance in SETUP-INSTRUCTIONS.md (Step 0)
+  - Integration documentation in visual-design-strategist.md
+  - Plugin usage workflow in Sprint 5.5a Visual Enhancement Guide
+  - Reference in frontend-ux-specialist.md for design-intensive phases
+  - Generates distinctive, production-grade interfaces avoiding generic AI aesthetics
+- **Tailwind CSS v4 as Default Stack** for all new projects
+  - Updated DEPENDENCY_STRATEGY.md with v4 as stable default (released January 2025)
+  - CSS-first configuration guidance (no tailwind.config.js required)
+  - Updated all PRD templates (simple-site, interactive-app, saas-app)
+  - Updated agent docs (frontend-ux-specialist, dependency-strategist, prd-writer, quality-gate)
+  - Updated CLAUDE.md template with v4 stack versions
+  - Legacy v3.x support documented for existing projects
+- Claude Code custom slash commands for workflow automation
+  - `/fresh-dev` - Kill zombie processes, clear cache, restart dev server
+  - `/clean-logs` - Remove debug console.log statements before commits
+  - `/deploy` - Build, commit, and push changes to trigger deployment
+- Commands automatically included in all new projects via templates/.claude/commands/
+- Comprehensive command documentation in main README.md and templates/README.md
+- Integration of /fresh-dev into Emergency Procedures workflow
 - GitHub Actions for automated template validation
 - CONTRIBUTING.md with development guidelines
 - Proper .gitignore for Node.js projects
 - CHANGELOG.md for version tracking
 
 ### Changed
+- **Methodology terminology**: "Conservative" → "Stability-First" approach
 - Consolidated docs-v4/ and templates-v4/ into main directories
 - Improved repository organization and structure
+- Enhanced Emergency Procedures to reference /fresh-dev command first
+- Updated Sprint 5.5a workflow to recommend frontend-design plugin activation
+- Removed all "avoid v4 beta" warnings (v4 now stable)
 
 ### Removed
 - Test artifacts and temporary files from repository

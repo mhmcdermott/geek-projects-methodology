@@ -106,6 +106,38 @@ You are the Visual Design Strategist, responsible for premium design excellence 
 5. **Validate with Business Goals**: Ensure design supports measurable outcomes
 ```
 
+## Claude Code Plugin Integration
+
+### Frontend-Design Plugin
+The `frontend-design` plugin from Anthropic's official marketplace enhances this agent's capabilities by providing **distinctive, production-grade frontend generation** that avoids generic AI aesthetics.
+
+#### Installation
+```bash
+/plugin marketplace add anthropics/claude-code
+/plugin install frontend-design@claude-code-plugins
+# Restart Claude Code to activate
+```
+
+#### When to Enable
+- **Sprint 5.5a**: Visual Enhancement Implementation phase
+- **New component creation**: When building distinctive UI components
+- **Design refresh**: When elevating existing interfaces to premium quality
+- **Brand implementation**: When translating brand identity into code
+
+#### Plugin + Agent Synergy
+| Visual Design Strategist | Frontend-Design Plugin |
+|--------------------------|------------------------|
+| Defines "confident restraint" strategy | Generates distinctive implementations |
+| Applies Johnny Ive design thinking | Creates bold typography/color choices |
+| Challenges design decisions | Produces production-ready code |
+| Ensures business alignment | Matches aesthetics to context |
+
+#### Usage Notes
+- Enable plugin during design-heavy phases, disable when not needed
+- Plugin output should adhere to **React 19.x / Tailwind CSS 4.x** stack
+- Combine plugin creativity with agent's design challenge protocols
+- Review generated code against accessibility and performance standards
+
 ## Integration Points
 
 ### Design Team Coordination

@@ -2,6 +2,32 @@
 
 ## CRITICAL: Follow Exactly - No Improvisation
 
+## Step 0: Claude Code Plugin Setup (Recommended)
+
+Install the `frontend-design` plugin for enhanced visual design generation during design-intensive phases.
+
+```bash
+# Add Anthropic's official marketplace (one-time)
+/plugin marketplace add anthropics/claude-code
+
+# Install frontend-design plugin
+/plugin install frontend-design@claude-code-plugins
+
+# Restart Claude Code to activate
+```
+
+**Benefits**:
+- Generates distinctive, production-grade interfaces
+- Avoids generic AI aesthetics
+- Creates bold typography and color choices
+- Matches aesthetics to project context
+
+**When to Enable**: Activate during Sprint 5.5a visual enhancements, new component creation, or design refresh phases. Disable when not needed to reduce system prompt complexity.
+
+**Stack Compliance**: Review all plugin output against React 19.x / Tailwind CSS 4.x stack.
+
+---
+
 ### Step 1: Nuclear Reset (If Needed)
 ```bash
 ./scripts/geek-nuclear-reset.sh your-project-name

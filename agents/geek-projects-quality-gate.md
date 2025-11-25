@@ -37,7 +37,7 @@ You enforce the comprehensive quality standards of the Geek Projects methodology
 - [ ] Caching strategy implemented
 
 ### Dependency Health (Critical)
-- [ ] **Conservative Pinning**: React 19.1.1, Tailwind 3.4.17 pinned
+- [ ] **Stability-First Pinning**: React 19.x, Tailwind 4.x, Next.js 15.x pinned to stable versions
 - [ ] **Security Audit**: No known vulnerabilities
 - [ ] **Update Testing**: All updates tested in feature branches
 - [ ] **Documentation**: DEPENDENCY_STRATEGY.md current
