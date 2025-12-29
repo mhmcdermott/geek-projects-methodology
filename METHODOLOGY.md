@@ -1,5 +1,10 @@
 # Geek Projects Methodology
 
+> **Start here:** [QUICK-START.md](QUICK-START.md) - 1-page guide to get going.
+> This document is a **reference**. Don't read it top-to-bottom.
+
+---
+
 ## Stack
 
 **Last updated: December 2025**
@@ -90,6 +95,18 @@ Answer these to find your tier:
 2. **Plan**: Write requirements. Sketch data model. List features.
 3. **Code**: Build one feature at a time. Test each one.
 4. **Test & Ship**: Final QA. Deploy. Verify in production.
+
+**Enforce it:** Use `/epct-workflow` in Claude Code to enforce this process with required deliverables and plan approval.
+
+#### Skip E.P.C.T. When...
+
+All of these must be true:
+- [ ] Single file change
+- [ ] Under 20 lines of code
+- [ ] No new dependencies
+- [ ] No user-facing behavior change
+
+If any is false, use the workflow.
 
 #### Opening Prompt Template
 

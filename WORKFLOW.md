@@ -133,6 +133,38 @@ Vercel deploys automatically.
 
 ---
 
+## Retrospective
+
+Do this after every feature (Tier 2-3) or after launch (all tiers).
+
+### Quick Retro (2 min)
+
+Answer these three questions:
+
+1. **What took longer than expected?**
+2. **What would you do differently?**
+3. **Any patterns to document in CLAUDE.md?**
+
+### Where to Record
+
+- **Small insight**: Add a comment to CLAUDE.md
+- **Pattern to reuse**: Add to project's `docs/patterns.md`
+- **Methodology improvement**: Open an issue or PR
+
+### Example
+
+```markdown
+## Retro: User Auth Feature
+
+**Longer than expected:** Setting up NextAuth callbacks - docs were confusing
+**Do differently:** Start with the NextAuth template from methodology
+**Pattern:** Added auth setup steps to CLAUDE.md for next time
+```
+
+**Why this matters:** Without retrospectives, you'll make the same mistakes. 5 minutes of reflection saves hours on the next project.
+
+---
+
 ## When Things Go Wrong
 
 ### Build Broken

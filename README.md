@@ -2,50 +2,45 @@
 
 A simple methodology for building web projects with Next.js.
 
-## Quick Start
+## Start Here
+
+**[QUICK-START.md](QUICK-START.md)** - Pick your tier, follow the checklist.
+
+## Setup
 
 **Option A: Use the starter template**
 ```bash
-# Clone and copy starter
 git clone https://github.com/mhmcdermott/geek-projects-methodology.git
 cp -r geek-projects-methodology/starter my-project
 cd my-project
-npm install
-npm run dev
+npm install && npm run dev
 ```
 
 **Option B: Use create-next-app**
 ```bash
 npx create-next-app@latest my-project --typescript --tailwind --app
-cd my-project
 ```
 
-Then add a `CLAUDE.md` file (copy from `templates/CLAUDE.md`).
-
-## How It Works
+## The Process
 
 **Build one feature at a time.** After each one:
-1. Run `npm run build` (must pass)
-2. Check it works on mobile (resize to 320px)
+1. `npm run build` (must pass)
+2. Test at 320px width
 3. Commit
 
-**Before shipping:**
-1. Get client approval
-2. Run full checklist
-3. Deploy
+**For Tier 2-3 projects:** Use `/epct-workflow` in Claude Code to enforce planning before coding.
 
-That's the whole process.
-
-## What's Here
+## Files
 
 ```
-├── README.md           # You are here
-├── METHODOLOGY.md      # Stack, patterns, principles
+├── QUICK-START.md      # Start here - 1-page guide
+├── METHODOLOGY.md      # Reference - stack, patterns, design
 ├── WORKFLOW.md         # Daily development process
 ├── CHECKLISTS.md       # Quality checks
 ├── starter/            # Ready-to-use project template
 └── templates/
     ├── CLAUDE.md       # Project context template
+    ├── PLAN.md         # Implementation plan template
     └── PRD.md          # Requirements template
 ```
 
