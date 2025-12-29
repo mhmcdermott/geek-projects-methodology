@@ -356,6 +356,31 @@ if (!result.success) {
 }
 ```
 
+### Testing
+
+| Tier | What to do |
+|------|------------|
+| **Tier 1** | Nothing. Manual click-through is fine. |
+| **Tier 2 personal** | Manual test the happy path before shipping. |
+| **Tier 2 client** | Manual test happy path + one sad path (what if form fails?). |
+| **Tier 3** | Add Playwright for critical user flows (signup, payment). |
+
+**Don't write tests for:**
+- UI layout/styling
+- Simple CRUD that Prisma/your ORM handles
+- Things that will change next week
+
+**Do write tests for:**
+- Auth flows (can't log in = dead app)
+- Payment flows (broken checkout = lost money)
+- Complex business logic that's hard to manually verify
+
+```bash
+# If you need Playwright (Tier 3)
+npm install -D @playwright/test
+npx playwright install
+```
+
 ---
 
 ## Troubleshooting
@@ -401,32 +426,15 @@ npm outdated
 
 ### Claude Code Plugins
 
-**Frontend Design** - For design-heavy work:
+**Don't install these upfront.** Add them when you hit the trigger.
 
-```bash
-/plugin marketplace add anthropics/claude-code
-/plugin install frontend-design@claude-code-plugins
-# Restart Claude Code
-```
+| Plugin | Install when... | Command |
+|--------|-----------------|---------|
+| **Frontend Design** | You're struggling with UI/design quality | `/plugin marketplace add anthropics/claude-code` then `/plugin install frontend-design@claude-code-plugins` |
+| **Dev Browser** | You need to verify complex flows (auth, multi-step) | `/plugin marketplace add sawyerhood/dev-browser` |
+| **Dot Claude** | You're researching unfamiliar domain/tech | `/plugin marketplace add Sawyer-Middeleer/dot-claude` |
 
-**Dev Browser** - For browser automation in Tier 2-3 projects:
-
-```bash
-/plugin marketplace add sawyerhood/dev-browser
-# Restart Claude Code
-```
-
-Lets Claude control a browser to test/verify work. Useful for complex user flows, auth testing, and catching runtime errors.
-
-**Dot Claude** - For research-heavy Explore phases:
-
-```bash
-/plugin marketplace add Sawyer-Middeleer/dot-claude
-/plugin install dot-claude
-# Restart Claude Code
-```
-
-Use `/deep-research [topic]` to research technical approaches, competitor products, or unfamiliar domains. Spawns parallel agents to analyze sources and synthesizes findings.
+Most Tier 1 projects need none of these. Tier 2 might use frontend-design. Tier 3 might use all three at different phases.
 
 ### Useful Commands
 
