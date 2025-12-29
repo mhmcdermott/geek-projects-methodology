@@ -274,6 +274,16 @@ npm outdated
 
 Lets Claude control a browser to test/verify work. Useful for complex user flows, auth testing, and catching runtime errors.
 
+**Dot Claude** - For research-heavy Explore phases:
+
+```bash
+/plugin marketplace add Sawyer-Middeleer/dot-claude
+/plugin install dot-claude
+# Restart Claude Code
+```
+
+Use `/deep-research [topic]` to research technical approaches, competitor products, or unfamiliar domains. Spawns parallel agents to analyze sources and synthesizes findings.
+
 ### Useful Commands
 
 ```bash
