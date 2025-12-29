@@ -87,6 +87,27 @@ Answer these to find your tier:
 3. **Code**: Build one feature at a time. Test each one.
 4. **Test & Ship**: Final QA. Deploy. Verify in production.
 
+#### Opening Prompt Template
+
+When starting a new project in Claude Code:
+
+```
+I'm building [project name] - a [one sentence description].
+
+This is a Tier [1/2/3] project. [Optional: why this tier]
+
+Follow the Geek Projects Methodology. Let's start with Explore.
+```
+
+**Example:**
+```
+I'm building InvoiceFlow - an app for freelancers to create and send invoices.
+
+This is a Tier 2 project - users need accounts but no teams or payments.
+
+Follow the Geek Projects Methodology. Let's start with Explore.
+```
+
 #### Explore: Start with a Brain Dump
 
 Record yourself answering these questions (voice memo, Loom, or just type stream-of-consciousness):
