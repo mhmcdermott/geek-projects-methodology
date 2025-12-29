@@ -1,6 +1,6 @@
 # Starter Template
 
-Minimal Next.js 15 + React 19 + Tailwind v4 starter.
+Minimal Next.js 16 + React 19 + Tailwind v4 starter.
 
 ## Setup
 
@@ -18,10 +18,10 @@ npm run dev
 
 ## What's Included
 
-- Next.js 15.3 with App Router
-- React 19.1
+- Next.js 16.1 with App Router
+- React 19.2
 - Tailwind CSS 4.1 (CSS-first config)
-- TypeScript 5.7
+- TypeScript 5.9
 - Security headers pre-configured
 
 ## Adding Features
