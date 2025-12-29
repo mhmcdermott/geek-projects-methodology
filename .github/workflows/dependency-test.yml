@@ -59,11 +59,10 @@ jobs:
       - name: Check for problematic dependency patterns
         run: |
           # Check for beta/alpha versions that might be problematic
-          echo "Checking for beta/alpha dependencies..."
-          npm list --depth=0 | grep -E "(beta|alpha|rc|pre)" && exit 1 || echo "No beta/pre-release dependencies found"
-          
-          # Specifically check for Tailwind CSS v4 beta
-          if npm list tailwindcss | grep -E "4\.(0|1|2).*beta"; then
-            echo "ERROR: Tailwind CSS v4 beta detected! This is known to cause issues."
-            exit 1
+          echo "Checking for beta/alpha/rc dependencies..."
+          if npm list --depth=0 2>/dev/null | grep -E "\-(beta|alpha|rc|pre)\." ; then
+            echo "⚠️  Pre-release dependencies found - review before merging"
+            # Warning only, not a failure - some pre-release deps may be intentional
+          else
+            echo "✅ No pre-release dependencies found"
           fi

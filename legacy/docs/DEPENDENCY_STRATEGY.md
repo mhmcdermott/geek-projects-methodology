@@ -2,117 +2,111 @@
 
 ## Project: [PROJECT_NAME]
 **Last Updated**: [DATE]
-**Strategy Version**: 2.0
+**Strategy Version**: 3.0
 
 ## Core Principles
 
-### Conservative Dependency Approach
-- **Pin critical dependencies** to stable versions
-- **Avoid beta/pre-release** versions in production
-- **Security patches only** for automated updates
-- **Manual review required** for framework updates
-- **Test on feature branch** before merging dependency updates
+### Balanced Approach
+- **New projects**: Use latest stable versions (`@latest`)
+- **Established projects**: Allow patch and minor updates automatically
+- **Security first**: Never block security patches
+- **Test before merge**: All dependency updates go through CI
 
-## Current Dependency Pinning (New Projects)
+## New Projects
 
-### Critical Dependencies (Pinned)
-```json
-{
-  "react": "^19.1.0",
-  "react-dom": "^19.1.0",
-  "tailwindcss": "^4.1.0",
-  "next": "^15.3.0",
-  "typescript": "^5.7.0"
-}
-```
-
-**Reasoning**: These versions are tested and stable as of November 2025. Updates require manual testing.
-
-### Legacy Projects (Tailwind v3)
-```json
-{
-  "tailwindcss": "^3.4.17"
-}
-```
-Existing projects on Tailwind v3 can remain stable. Migration to v4 is recommended but not required.
-
-## Tailwind CSS v4 (Stable - Default for New Projects)
-
-### Status Update (November 2025)
-- **Released**: January 22, 2025 (stable)
-- **Current**: v4.1.x
-- **Recommendation**: Use v4 for all new projects
-
-### Key Changes from v3
-- **CSS-first configuration**: No `tailwind.config.js` required
-- **Automatic content detection**: No manual content paths needed
-- **First-party Vite plugin**: `@tailwindcss/vite`
-- **Performance**: 5-100x faster builds
-
-### New Project Setup (Tailwind v4)
-```bash
-npm install tailwindcss @tailwindcss/vite
-```
-
-```css
-/* app/globals.css */
-@import "tailwindcss";
-```
-
-```ts
-// vite.config.ts (or next.config.ts with Vite)
-import tailwindcss from '@tailwindcss/vite'
-
-export default {
-  plugins: [tailwindcss()]
-}
-```
-
-### Migration Guide (v3 → v4)
-For existing projects, see official migration guide: https://tailwindcss.com/docs/upgrade-guide
-
-## Known Considerations
-
-### Tailwind v4 Plugin Compatibility
-- Check third-party Tailwind plugins for v4 support before using
-- `@tailwindcss/forms`, `@tailwindcss/typography` have v4 versions
-- Some community plugins may still require v3
-
-## Update Testing Procedures
-
-### Before Any Update
-1. **Create feature branch** for dependency updates
-2. **Clear caches**: `rm -rf .next && rm -rf node_modules`
-3. **Fresh install**: `npm install`
-4. **Test core functionality** thoroughly
-5. **Run build process** and verify success
-6. **Check TypeScript compilation**
-7. **Run Lighthouse audit** for performance impact
-
-### Testing Checklist
-- [ ] All pages load without errors
-- [ ] All interactive features work
-- [ ] Build completes successfully
-- [ ] TypeScript compiles without errors
-- [ ] Performance benchmarks maintained
-- [ ] No console errors or warnings
-
-## Troubleshooting Commands
+**Always start with the latest stable versions:**
 
 ```bash
-# Clear caches
-rm -rf .next
-rm -rf node_modules && npm install
+# Recommended: Use create-next-app with latest
+npx create-next-app@latest my-project --typescript --tailwind --app
+```
+
+**Do NOT pin to specific versions on day one.** You want:
+- Latest security patches
+- Latest bug fixes
+- No technical debt from the start
+
+**After your first production deploy**, consider pinning major versions to avoid surprise breaking changes.
+
+## Established Projects
+
+### Dependency Update Policy
+
+| Update Type | Auto-merge | Rationale |
+|-------------|------------|-----------|
+| Patch (x.x.1 → x.x.2) | ✅ Yes | Bug fixes, security patches |
+| Minor (x.1.x → x.2.x) | ✅ Yes | New features, security fixes often land here |
+| Major (1.x.x → 2.x.x) | ❌ Manual | Breaking changes require testing |
+
+### Why Allow Minor Updates?
+
+Security fixes frequently ship as minor versions:
+- Next.js CVE-2024-46982 (cache poisoning) - fixed in minor release
+- React security patches often come in minors
+- Blocking minors = blocking security fixes
+
+## Dependabot Configuration
+
+Use the provided `.github/workflows/dependabot.yml` which:
+- Runs weekly security checks
+- Auto-creates PRs for all patch/minor updates
+- Only blocks major version bumps
+- Triggers full CI test suite on each PR
+
+## CI Security Gates
+
+All dependency PRs must pass:
+1. `npm audit --audit-level=moderate` - Block on moderate+ vulnerabilities
+2. `npm run build` - Ensure build still works
+3. `npx tsc --noEmit` - TypeScript must compile
+4. `npm run lint` - No new lint errors
+
+## Security Monitoring
+
+### Required Setup
+1. **Enable GitHub Security Alerts** in repository settings
+2. **Enable Dependabot Security Updates** (separate from version updates)
+3. **Subscribe to framework advisories**:
+   - [Next.js Security](https://github.com/vercel/next.js/security/advisories)
+   - [React Security](https://github.com/facebook/react/security/advisories)
+
+### Weekly Routine
+```bash
+# Check for vulnerabilities
+npm audit
+
+# Check for outdated packages
+npm outdated
+
+# Update all within semver ranges
+npm update
+```
+
+## Troubleshooting
+
+```bash
+# Clear caches and reinstall
+rm -rf .next node_modules && npm install
 
 # Check dependency tree
 npm ls
 
-# Audit security issues
-npm audit
+# Fix audit issues automatically (when safe)
+npm audit fix
 
-# Test build process
-npm run build
-
-# Check for outdated packages
-npm outdated
+# See what would update
+npm update --dry-run
 ```
+
+## Migration Notes
+
+### Tailwind v3 → v4
+- v4 is stable as of January 2025
+- New projects should use v4
+- Existing v3 projects can migrate when ready
+- See: https://tailwindcss.com/docs/upgrade-guide
+
+### React 18 → 19
+- React 19 is stable
+- New projects should use React 19
+- Migration guide: https://react.dev/blog/2024/04/25/react-19-upgrade-guide

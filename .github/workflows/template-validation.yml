@@ -2,171 +2,115 @@ name: Template Validation
 
 on:
   push:
-    branches: [ main ]
-    paths: 
-      - 'templates/**'
-      - 'scripts/**'
-  pull_request:
-    branches: [ main ]
+    branches: [main]
     paths:
+      - 'starter/**'
       - 'templates/**'
-      - 'scripts/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'starter/**'
+      - 'templates/**'
 
 jobs:
-  validate-tier2-template:
+  validate-starter:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
-          
-      - name: Test Tier 2 Template Structure
-        run: |
-          if [ ! -d "templates/tier2-interactive-app/nextjs-full-stack-stable" ]; then
-            echo "❌ Tier 2 template directory missing"
-            exit 1
-          fi
-          
-          if [ ! -f "templates/tier2-interactive-app/nextjs-full-stack-stable/package.json" ]; then
-            echo "❌ package.json missing in Tier 2 template"
-            exit 1
-          fi
-          
-          echo "✅ Tier 2 template structure valid"
-          
-      - name: Test Template Installation
-        run: |
-          # Copy template to test directory
-          cp -r templates/tier2-interactive-app/nextjs-full-stack-stable/ test-template/
-          cd test-template
-          
-          # Verify package.json has required dependencies
-          if ! grep -q "react.*19.0.0-rc" package.json; then
-            echo "❌ React version not as expected"
-            exit 1
-          fi
-          
-          if ! grep -q "tailwindcss.*3.4.17" package.json; then
-            echo "❌ Tailwind version not as expected"
-            exit 1
-          fi
-          
-          echo "✅ Template dependencies validated"
-          
-      - name: Test Dependency Installation
-        run: |
-          cd test-template
-          
-          # Install dependencies
-          npm install --no-audit --no-fund
-          
-          if [ $? -ne 0 ]; then
-            echo "❌ npm install failed"
-            exit 1
-          fi
-          
-          echo "✅ Dependencies installed successfully"
-          
-      - name: Test Build Process
-        run: |
-          cd test-template
-          
-          # Test TypeScript compilation
-          npx tsc --noEmit
-          
-          if [ $? -ne 0 ]; then
-            echo "❌ TypeScript compilation failed"
-            exit 1
-          fi
-          
-          # Test Next.js build
-          npm run build
-          
-          if [ $? -ne 0 ]; then
-            echo "❌ Next.js build failed"
-            exit 1
-          fi
-          
-          echo "✅ Template builds successfully"
-          
-      - name: Test Scripts
-        run: |
-          # Make scripts executable
-          chmod +x scripts/*.sh
-          
-          # Test nuclear reset script (dry run simulation)
-          if [ ! -f "scripts/geek-nuclear-reset.sh" ]; then
-            echo "❌ Nuclear reset script missing"
-            exit 1
-          fi
-          
-          echo "✅ Scripts validated"
+          cache-dependency-path: starter/package-lock.json
 
-  validate-documentation:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: Validate Documentation Structure
+      - name: Validate starter structure
         run: |
-          # Check required documentation files
-          if [ ! -f "README.md" ]; then
-            echo "❌ README.md missing"
-            exit 1
-          fi
-          
-          if [ ! -f "docs/DEPENDENCY_STRATEGY.md" ]; then
-            echo "❌ Dependency strategy documentation missing"
-            exit 1
-          fi
-          
-          if [ ! -f "templates/ENHANCED-CLAUDE-TEMPLATE.md" ]; then
-            echo "❌ Enhanced CLAUDE template missing"
-            exit 1
-          fi
-          
-          echo "✅ Documentation structure validated"
-          
-      - name: Validate Template Completeness
-        run: |
-          # Check that each tier has required components
-          for tier in tier1-simple-site tier2-interactive-app tier3-saas-application; do
-            if [ ! -d "templates/$tier" ]; then
-              echo "❌ Template directory missing: templates/$tier"
+          echo "Checking starter template structure..."
+
+          # Required files
+          for file in package.json tsconfig.json next.config.ts README.md; do
+            if [ ! -f "starter/$file" ]; then
+              echo "❌ Missing: starter/$file"
               exit 1
             fi
           done
-          
-          echo "✅ Template completeness validated"
 
-  security-audit:
+          # Required directories
+          if [ ! -d "starter/src" ]; then
+            echo "❌ Missing: starter/src directory"
+            exit 1
+          fi
+
+          echo "✅ Starter structure valid"
+
+      - name: Install dependencies
+        run: |
+          cd starter
+          npm install
+
+      - name: Security audit
+        run: |
+          cd starter
+          npm audit --audit-level=high
+        continue-on-error: false
+
+      - name: TypeScript check
+        run: |
+          cd starter
+          npx tsc --noEmit
+
+      - name: Build test
+        run: |
+          cd starter
+          npm run build
+
+      - name: Lint check
+        run: |
+          cd starter
+          npm run lint
+
+  validate-templates:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          
-      - name: Security Audit Template Dependencies
+
+      - name: Validate template files
         run: |
-          cd templates/tier2-interactive-app/nextjs-full-stack-stable/
-          npm audit --audit-level=high
-          
-          if [ $? -ne 0 ]; then
-            echo "❌ Security vulnerabilities found in template dependencies"
-            exit 1
-          fi
-          
-          echo "✅ No high-level security vulnerabilities found"
+          echo "Checking template files..."
+
+          # Required template files
+          for file in CLAUDE.md PRD.md; do
+            if [ ! -f "templates/$file" ]; then
+              echo "❌ Missing: templates/$file"
+              exit 1
+            fi
+          done
+
+          echo "✅ Template files valid"
+
+  validate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate documentation
+        run: |
+          echo "Checking core documentation..."
+
+          # Required documentation
+          for file in README.md METHODOLOGY.md WORKFLOW.md CHECKLISTS.md; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              exit 1
+            fi
+          done
+
+          echo "✅ Documentation valid"

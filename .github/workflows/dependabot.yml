@@ -1,5 +1,5 @@
 # Dependabot configuration for Geek Projects methodology
-# Conservative approach: security patches only for critical dependencies
+# Balanced approach: allow patch/minor updates, block only major versions
 
 version: 2
 updates:
@@ -10,41 +10,57 @@ updates:
       day: "monday"
       time: "09:00"
       timezone: "Europe/London"
-    
-    # Conservative approach: ignore major/minor updates for critical dependencies
+
+    # Only block major version updates - allow all patch and minor updates
+    # Security fixes often ship in minor versions, so blocking them is dangerous
     ignore:
-      # React ecosystem - pin to stable major versions
+      # React ecosystem - block major only
       - dependency-name: "react"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
-      - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
-      
-      # Tailwind CSS - avoid v4 beta breaking changes
-      - dependency-name: "tailwindcss"
         update-types: ["version-update:semver-major"]
-      
-      # Next.js - test major updates manually
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+
+      # Next.js - block major only
       - dependency-name: "next"
         update-types: ["version-update:semver-major"]
-      
-      # TypeScript - major updates can break compatibility
+
+      # Tailwind CSS - block major only
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
+
+      # TypeScript - block major only
       - dependency-name: "typescript"
         update-types: ["version-update:semver-major"]
-    
+
     # Add labels to dependency PRs for easy identification
     labels:
       - "dependencies"
       - "automated-pr"
-    
-    # Add reviewers for critical dependency updates
+
+    # Add reviewers for dependency updates
     reviewers:
       - "mhmcdermott"
-    
+
     # Configure PR messages
     commit-message:
       prefix: "deps"
       prefix-development: "deps-dev"
       include: "scope"
-    
+
     # Limit number of open PRs to avoid overwhelming
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
+
+    # Group minor and patch updates to reduce PR noise
+    groups:
+      # Group all minor/patch updates for production deps
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group all dev dependency updates
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
