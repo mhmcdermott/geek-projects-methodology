@@ -2,6 +2,16 @@
 
 > One-line description of what this is.
 
+## Methodology
+
+This project follows [Geek Projects Methodology](https://github.com/mhmcdermott/geek-projects-methodology).
+
+**For features:** Use `/epct-workflow` - requires plan approval before coding.
+
+**Skip workflow if:** Single file, <20 lines, no new deps, no behavior change.
+
+---
+
 ## Context
 
 **What**: [What does this app/site do?]

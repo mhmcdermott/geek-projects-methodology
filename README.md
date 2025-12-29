@@ -1,14 +1,12 @@
 # Geek Projects
 
-A simple methodology for building web projects with Next.js.
+A methodology for building Next.js projects with Claude Code.
+
+---
 
 ## Start Here
 
-**[QUICK-START.md](QUICK-START.md)** - Pick your tier, follow the checklist.
-
-## Setup
-
-**Option A: Use the starter template**
+### 1. Copy the starter
 ```bash
 git clone https://github.com/mhmcdermott/geek-projects-methodology.git
 cp -r geek-projects-methodology/starter my-project
@@ -16,57 +14,32 @@ cd my-project
 npm install && npm run dev
 ```
 
-**Option B: Use create-next-app**
-```bash
-npx create-next-app@latest my-project --typescript --tailwind --app
+### 2. Read QUICK-START.md
+Open **[QUICK-START.md](QUICK-START.md)** - pick your tier, follow the checklist.
+
+### 3. For features, use the workflow
 ```
-
-## The Process
-
-**Build one feature at a time.** After each one:
-1. `npm run build` (must pass)
-2. Test at 320px width
-3. Commit
-
-**For Tier 2-3 projects:** Use `/epct-workflow` in Claude Code to enforce planning before coding.
-
-## Files
-
+/epct-workflow
 ```
-├── QUICK-START.md      # Start here - 1-page guide
-├── METHODOLOGY.md      # Reference - stack, patterns, design
-├── WORKFLOW.md         # Daily development process
-├── CHECKLISTS.md       # Quality checks
-├── starter/            # Ready-to-use project template
-└── templates/
-    ├── CLAUDE.md       # Project context template
-    ├── PLAN.md         # Implementation plan template
-    └── PRD.md          # Requirements template
-```
+This enforces planning before coding.
+
+---
+
+## That's it.
+
+Everything else is reference material:
+
+| File | Use when... |
+|------|-------------|
+| [QUICK-START.md](QUICK-START.md) | Starting a project |
+| [METHODOLOGY.md](METHODOLOGY.md) | You need stack/pattern details |
+| [WORKFLOW.md](WORKFLOW.md) | You need daily process reference |
+| [CHECKLISTS.md](CHECKLISTS.md) | You're about to ship |
+
+---
 
 ## Stack
 
 ```
 Next.js 16.x + React 19.x + Tailwind 4.x + TypeScript 5.x
 ```
-
-Deployed on Vercel. Auth with NextAuth. Database with Prisma/Supabase when needed.
-
-## Principles
-
-1. **Keep it simple** - Don't add complexity until you need it
-2. **Ship working software** - A feature isn't done until it's deployed
-3. **Mobile first** - Start at 320px, enhance up
-4. **Fix the build first** - If it's broken, nothing else matters
-5. **Client approval before QA** - They'll catch things you won't
-
-## When Things Break
-
-```bash
-# Fixes 90% of build issues
-rm -rf .next
-
-# Nuclear option
-rm -rf node_modules .next && npm install
-```
-
