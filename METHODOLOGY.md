@@ -192,6 +192,23 @@ Pick 3-5 reference sites. Screenshot the parts you like. Share with client befor
 3. Export to Figma for refinement, or grab the generated code
 4. Use `/stitch` command to generate a Stitch-optimized prompt from your project context
 
+### Design Resources
+
+| Tool | What it does |
+|------|--------------|
+| [Realtime Colors](https://www.realtimecolors.com/) | Generate color palettes, preview on a real UI |
+| [Lucide Icons](https://lucide.dev/) | Clean, consistent icons (pairs with shadcn/ui) |
+| [shadcn/ui](https://ui.shadcn.com/) | Copy-paste components - not a dependency, you own the code |
+| [Font Pair](https://fontpair.co/) | Google Font combinations that work together |
+| [Contrast Checker](https://webaim.org/resources/contrastchecker/) | Verify text is readable (accessibility) |
+
+**Quick setup for most projects:**
+```bash
+# Add shadcn/ui (after project setup)
+npx shadcn@latest init
+npx shadcn@latest add button card input
+```
+
 ---
 
 ## Principles
