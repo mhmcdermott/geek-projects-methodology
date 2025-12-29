@@ -36,16 +36,18 @@
 ```
 src/
 ├── app/
-│   ├── (public)/      # Public pages
-│   ├── (auth)/        # Auth-required pages
-│   └── api/           # API routes
+│   ├── (unauthenticated)/  # Public pages (landing, login, signup)
+│   ├── (authenticated)/    # Auth-required pages (dashboard, settings)
+│   └── api/                # API routes
+├── actions/                # Server actions (if using)
+│   └── [feature].ts        # e.g., customers.ts, stripe.ts
 ├── components/
-│   ├── ui/            # Generic components
-│   └── features/      # Feature-specific
+│   ├── ui/                 # Generic components (button, input, card)
+│   └── [feature]/          # Feature-specific components
 └── lib/
-    ├── db.ts          # Database
-    ├── auth.ts        # Auth config
-    └── utils.ts       # Helpers
+    ├── db.ts               # Database client
+    ├── auth.ts             # Auth config
+    └── utils.ts            # Helpers
 ```
 
 ## Running Locally

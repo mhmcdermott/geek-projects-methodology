@@ -72,6 +72,8 @@ npm install react-hook-form zod @hookform/resolvers
 3. **Code**: Build one feature at a time. Test each one.
 4. **Test & Ship**: Final QA. Deploy. Verify in production.
 
+**Deep Planning (Tier 2-3)**: Use `/interview-plan docs/plan.md` to have Claude interview you about your plan. Surfaces gaps, challenges assumptions, and outputs a detailed spec.
+
 ### Sprint Rhythm (for Tier 2-3)
 
 ```
@@ -81,6 +83,19 @@ Sprint N+1:     Final QA + launch
 ```
 
 **Rule**: Never start QA without client approval. They catch things you won't.
+
+### Design Inspiration
+
+No design direction? Start here during the **Explore** phase:
+
+| Project Type | Resources |
+|--------------|-----------|
+| SaaS / Apps | [Saaspo](https://saaspo.com/), [SaaS Interface](https://saasinterface.com/) |
+| Landing Pages | [Landingfolio](https://www.landingfolio.com/), [Lapa Ninja](https://www.lapa.ninja/) |
+| Portfolios | [Lapa Ninja Portfolios](https://www.lapa.ninja/category/portfolio/) |
+| High-end / General | [Godly](https://godly.website/) |
+
+Pick 3-5 reference sites. Screenshot the parts you like. Share with client before designing.
 
 ---
 
@@ -111,9 +126,12 @@ my-project/
 ├── CLAUDE.md              # Project context (for AI + future you)
 ├── src/
 │   ├── app/               # Routes and pages
-│   │   ├── (auth)/        # Auth-required routes
+│   │   ├── (unauthenticated)/  # Public routes (landing, login)
+│   │   ├── (authenticated)/    # Auth-required routes (dashboard)
 │   │   ├── api/           # API routes
 │   │   └── layout.tsx     # Root layout
+│   ├── actions/           # Server actions (Tier 2-3)
+│   │   └── [feature].ts   # e.g., users.ts, billing.ts
 │   ├── components/
 │   │   ├── ui/            # Generic (button, input, card)
 │   │   └── [feature]/     # Feature-specific
@@ -237,15 +255,24 @@ npm outdated
 
 ## Tools
 
-### Claude Code Plugin
+### Claude Code Plugins
 
-For design-heavy work:
+**Frontend Design** - For design-heavy work:
 
 ```bash
 /plugin marketplace add anthropics/claude-code
 /plugin install frontend-design@claude-code-plugins
 # Restart Claude Code
 ```
+
+**Dev Browser** - For browser automation in Tier 2-3 projects:
+
+```bash
+/plugin marketplace add sawyerhood/dev-browser
+# Restart Claude Code
+```
+
+Lets Claude control a browser to test/verify work. Useful for complex user flows, auth testing, and catching runtime errors.
 
 ### Useful Commands
 
