@@ -2,16 +2,20 @@
 
 ## Stack
 
-**Last updated: November 2025**
+**Last updated: December 2025**
 
 ```json
 {
-  "next": "^15.3.0",
-  "react": "^19.1.0",
+  "next": "^16.1.0",
+  "react": "^19.2.0",
   "tailwindcss": "^4.1.0",
-  "typescript": "^5.7.0"
+  "typescript": "^5.9.0"
 }
 ```
+
+**For new projects**: Use `@latest` - start with current stable versions.
+
+**For existing projects**: Be cautious with major version bumps (e.g., Next 15→16). Test thoroughly before upgrading.
 
 ### Tailwind v4 Setup
 
