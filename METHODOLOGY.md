@@ -180,6 +180,18 @@ No design direction? Start here during the **Explore** phase:
 
 Pick 3-5 reference sites. Screenshot the parts you like. Share with client before designing.
 
+### AI Design with Stitch
+
+[Google Stitch](https://stitch.withgoogle.com/) turns prompts into UI designs + production code. Free via Google Labs.
+
+**When to use**: Early prototyping, exploring layouts, generating starting points for components.
+
+**Workflow**:
+1. Describe what you need (e.g., "Dashboard with sidebar nav, stats cards, and a data table")
+2. Optionally upload reference images for style matching
+3. Export to Figma for refinement, or grab the generated code
+4. Use `/stitch` command to generate a Stitch-optimized prompt from your project context
+
 ---
 
 ## Principles
