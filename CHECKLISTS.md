@@ -29,6 +29,8 @@ npm audit
 - [ ] Auth routes are protected
 - [ ] No secrets in code (check with `git log -p | grep -i password`)
 - [ ] Environment variables used for all credentials
+- [ ] Error messages don't leak stack traces or internals
+- [ ] Rate limiting on auth endpoints (Tier 2-3)
 
 **Headers to add** (in `next.config.js` or middleware):
 ```javascript
@@ -132,3 +134,25 @@ npx lighthouse https://your-site.vercel.app --output html --output-path ./lighth
 | Before client review | Full visual polish |
 | Before launch | Everything above |
 | After launch | Live site works, main flow, mobile |
+
+---
+
+## Client Handover (Tier 2-3)
+
+Skip this for personal projects.
+
+### Before Handover
+- [ ] Client has admin credentials (use password manager, not email)
+- [ ] Client added to Vercel project (Viewer or Admin)
+- [ ] Environment variables documented (what they are, not the values)
+- [ ] CLAUDE.md updated with current state
+
+### Handover Call (30-60 min)
+- [ ] Walk through main admin flows
+- [ ] Show how to update content (if CMS)
+- [ ] Explain what breaks things (don't touch X, Y, Z)
+- [ ] Demo the support process
+
+### After Handover
+- [ ] Written confirmation: "I have access and understand how to use this"
+- [ ] Check in after 1 week - any issues?

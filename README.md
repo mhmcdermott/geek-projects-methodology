@@ -75,6 +75,3 @@ rm -rf .next
 rm -rf node_modules .next && npm install
 ```
 
-## Legacy
-
-Previous versions (v4.x with agent system) are in `legacy/` for reference.

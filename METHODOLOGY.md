@@ -59,7 +59,22 @@ npm install react-hook-form zod @hookform/resolvers
 | 2 | App with users | 3-6 weeks | Yes | Yes |
 | 3 | SaaS product | 2-6 months | Yes + roles | Yes + multi-tenant |
 
-**Pick your tier before starting.** It determines scope and complexity.
+### Scoping Questions
+
+Answer these to find your tier:
+
+1. **Do users need accounts?** No → Tier 1. Yes → continue.
+2. **Do users pay you money?** No → Tier 2. Yes → continue.
+3. **Do you need teams, orgs, or roles?** No → Tier 2. Yes → Tier 3.
+4. **Will multiple companies use the same codebase?** Yes → Tier 3.
+
+**Red flags that push you up a tier:**
+- "We'll add payments later" → Plan for Tier 3 now
+- "Just a simple admin panel" → Usually Tier 2
+- "Users can invite others" → Tier 3 (permissions are hard)
+- "We need analytics/dashboards" → Often Tier 3
+
+**When in doubt, pick the higher tier.** Underestimating scope is the #1 project killer.
 
 ---
 
@@ -71,6 +86,49 @@ npm install react-hook-form zod @hookform/resolvers
 2. **Plan**: Write requirements. Sketch data model. List features.
 3. **Code**: Build one feature at a time. Test each one.
 4. **Test & Ship**: Final QA. Deploy. Verify in production.
+
+#### Explore: Start with a Brain Dump
+
+Record yourself answering these questions (voice memo, Loom, or just type stream-of-consciousness):
+
+**The Problem**
+- What's the pain? Who feels it? How often?
+- What do they do today to solve it? Why is that annoying?
+- What triggered this project? (client request, your own itch, market gap?)
+
+**The User**
+- Describe one specific person who needs this. Name them.
+- What's their day like? Where does this problem show up?
+- What would make them say "finally, someone built this"?
+
+**The Solution**
+- In one sentence, what does this thing do?
+- What's the first thing a user does when they open it?
+- What does success look like? How would you measure it?
+
+**The Scope**
+- What's the simplest version that's still useful?
+- What are you definitely NOT building (even if people ask)?
+- Is this a weekend project or a 6-month commitment?
+
+Save the transcript to `docs/brain-dump.md`. Then distill into the outputs below.
+
+#### Explore Phase Outputs
+
+Don't start planning until you can answer these:
+
+| Output | What it is | Example |
+|--------|------------|---------|
+| **Problem statement** | One sentence: who has what problem | "Freelancers waste 2hrs/week chasing invoices" |
+| **Target user** | Specific person, not "everyone" | "Solo freelancers billing <10 clients/month" |
+| **Success metric** | How you'll know it works | "User sends first invoice within 5 min of signup" |
+| **Tier decision** | Scope locked (see scoping questions) | "Tier 2 - accounts but no teams" |
+| **Design references** | 3-5 screenshots of what you like | Saved in `docs/inspiration/` |
+
+**For Tier 2-3, also define:**
+- Who's paying and why (business model)
+- What the MVP does NOT include
+- Key risk or assumption to validate
 
 **Deep Planning (Tier 2-3)**: Use `/interview-plan docs/plan.md` to have Claude interview you about your plan. Surfaces gaps, challenges assumptions, and outputs a detailed spec.
 
@@ -209,6 +267,92 @@ export function ContactForm() {
       {/* ... */}
     </form>
   )
+}
+```
+
+### Error Handling
+
+| Tier | What to do |
+|------|------------|
+| **Tier 1** | Skip this section entirely |
+| **Tier 2 personal** | Just add `error.tsx` - that's enough |
+| **Tier 2 client** | Add `error.tsx` + toast for form feedback |
+| **Tier 3** | All patterns below |
+
+**Error Boundary** - Catch React errors gracefully:
+
+```typescript
+// src/components/error-boundary.tsx
+"use client"
+
+export function ErrorBoundary({ children }: { children: React.ReactNode }) {
+  return (
+    <ErrorBoundaryInner>
+      {children}
+    </ErrorBoundaryInner>
+  )
+}
+
+// Use in layout.tsx:
+// <ErrorBoundary>{children}</ErrorBoundary>
+```
+
+For Next.js 15, use the built-in `error.tsx` convention instead:
+
+```typescript
+// src/app/error.tsx
+"use client"
+
+export default function Error({ error, reset }: {
+  error: Error
+  reset: () => void
+}) {
+  return (
+    <div className="p-8 text-center">
+      <h2>Something went wrong</h2>
+      <button onClick={reset}>Try again</button>
+    </div>
+  )
+}
+```
+
+**Toast Notifications** - User feedback for actions:
+
+```typescript
+// Simple toast state (no library needed for basic use)
+const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null)
+
+// Show toast
+setToast({ message: "Saved!", type: "success" })
+
+// Auto-dismiss
+useEffect(() => {
+  if (toast) {
+    const timer = setTimeout(() => setToast(null), 3000)
+    return () => clearTimeout(timer)
+  }
+}, [toast])
+```
+
+**Server Action Errors** - Return errors, don't throw:
+
+```typescript
+// src/actions/users.ts
+"use server"
+
+export async function createUser(data: FormData) {
+  try {
+    // ... create user
+    return { success: true, user }
+  } catch (error) {
+    return { success: false, error: "Failed to create user" }
+  }
+}
+
+// In component:
+const result = await createUser(formData)
+if (!result.success) {
+  setToast({ message: result.error, type: "error" })
 }
 ```
 
