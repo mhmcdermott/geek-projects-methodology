@@ -52,7 +52,7 @@ That's the whole process.
 ## Stack
 
 ```
-Next.js 15.x + React 19.x + Tailwind 4.x + TypeScript
+Next.js 16.x + React 19.x + Tailwind 4.x + TypeScript 5.x
 ```
 
 Deployed on Vercel. Auth with NextAuth. Database with Prisma/Supabase when needed.
