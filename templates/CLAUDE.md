@@ -8,57 +8,90 @@ This project follows [Geek Projects Methodology](https://github.com/mhmcdermott/
 
 **For features:** Use `/epct-workflow` - requires plan approval before coding.
 
-**Skip workflow if:** Single file, <20 lines, no new deps, no behavior change.
+**Skip workflow if:** Single file, <20 lines, no new deps, no behaviour change.
 
 ---
 
-## Context
+## Context Files
 
-**What**: [What does this app/site do?]
+This project uses three context files:
 
-**Who**: [Who is it for?]
+| File | Purpose | Update Frequency |
+|------|---------|------------------|
+| **CLAUDE.md** (this file) | Stable identity - what this project is | Rarely |
+| **NOW.md** | Current state - what's happening now | Every session |
+| **MEMORY.md** | Patterns - lessons learned over time | When insights emerge |
 
-**Why**: [What problem does it solve?]
+---
 
-## Current Status
+## Project Identity
 
-**Working on**: [Current task]
+**What:** [What does this app/site do? One paragraph max.]
 
-**Blocked by**: [Any blockers, or "Nothing"]
+**Who:** [Who is it for? Be specific.]
 
-**Next**: [What's after current task]
+**Why:** [What problem does it solve?]
 
-## Features
+**Tier:** [1 / 2 / 3] - [Brief justification]
 
-- [x] Completed feature
-- [ ] In progress feature
-- [ ] Planned feature
+---
 
 ## Tech Stack
 
-- Next.js 15.x / React 19.x / Tailwind 4.x / TypeScript
-- Auth: [None / NextAuth with Google / etc.]
-- Database: [None / Supabase / Prisma + PostgreSQL / etc.]
-- Hosting: Vercel
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16.x / React 19.x |
+| Styling | Tailwind 4.x |
+| Language | TypeScript |
+| Auth | [None / NextAuth with Google / etc.] |
+| Database | [None / Supabase / Prisma + PostgreSQL / etc.] |
+| Hosting | Vercel |
+
+---
 
 ## Project Structure
 
 ```
 src/
 ├── app/
-│   ├── (unauthenticated)/  # Public pages (landing, login, signup)
-│   ├── (authenticated)/    # Auth-required pages (dashboard, settings)
+│   ├── (public)/           # Public pages (landing, login)
+│   ├── (authenticated)/    # Auth-required pages
 │   └── api/                # API routes
-├── actions/                # Server actions (if using)
-│   └── [feature].ts        # e.g., customers.ts, stripe.ts
+├── actions/                # Server actions
 ├── components/
-│   ├── ui/                 # Generic components (button, input, card)
+│   ├── ui/                 # Generic components
 │   └── [feature]/          # Feature-specific components
 └── lib/
     ├── db.ts               # Database client
     ├── auth.ts             # Auth config
     └── utils.ts            # Helpers
 ```
+
+---
+
+## Key Decisions
+
+Decisions that are unlikely to change:
+
+| What | Decision | Why |
+|------|----------|-----|
+| Auth | [e.g., NextAuth + Google] | [e.g., Simple, secure, users have accounts] |
+| Database | [e.g., Supabase] | [e.g., Free tier, easy setup] |
+| Styling | Tailwind | Fast iteration, no CSS files |
+
+---
+
+## Boundaries
+
+**This project is:**
+- [Core purpose]
+- [Secondary purpose]
+
+**This project is NOT:**
+- [Explicit exclusion]
+- [Another exclusion]
+
+---
 
 ## Running Locally
 
@@ -75,21 +108,24 @@ npm run dev
 DATABASE_URL=           # Database connection string
 NEXTAUTH_URL=           # http://localhost:3000 for dev
 NEXTAUTH_SECRET=        # Generate with: openssl rand -base64 32
-GOOGLE_CLIENT_ID=       # From Google Cloud Console
-GOOGLE_CLIENT_SECRET=   # From Google Cloud Console
+# Add others as needed
 ```
 
-## Key Decisions
+---
 
-| What | Decision | Why |
-|------|----------|-----|
-| Auth | NextAuth + Google | Simple, secure, users have Google accounts |
-| Database | Supabase | Free tier, easy setup, good DX |
-| Styling | Tailwind | Fast iteration, no CSS files to manage |
+## Features
 
-## Known Issues
+Core features (stable):
 
-- None currently
+- [x] [Completed feature]
+- [x] [Another completed feature]
+
+Planned features (see NOW.md for current work):
+
+- [ ] [Planned feature]
+- [ ] [Another planned feature]
+
+---
 
 ## Useful Commands
 
@@ -97,5 +133,4 @@ GOOGLE_CLIENT_SECRET=   # From Google Cloud Console
 npm run dev          # Start dev server
 npm run build        # Production build
 npx tsc --noEmit     # Type check
-npx prisma studio    # View database (if using Prisma)
 ```

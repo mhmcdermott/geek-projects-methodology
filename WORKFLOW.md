@@ -64,6 +64,91 @@ git push
 
 ---
 
+## Task Tracking with TodoWrite
+
+Use Claude Code's TodoWrite tool to track multi-step work. This keeps progress visible and prevents losing track across context boundaries.
+
+### When to Use TodoWrite
+
+**Use it when:**
+- Task has 3+ distinct steps
+- Work spans multiple files
+- You might get interrupted or context might compact
+
+**Skip it when:**
+- Single file change
+- Trivial fix (< 5 minutes)
+- One-step task
+
+### How to Structure Todos
+
+Each todo needs two forms:
+
+```typescript
+{
+  content: "Implement user authentication",     // What to do (imperative)
+  status: "in_progress",                        // pending | in_progress | completed
+  activeForm: "Implementing user authentication" // What's happening (present continuous)
+}
+```
+
+### TodoWrite Discipline
+
+1. **Create todos before starting** - Plan the steps
+2. **Mark in_progress before working** - One task at a time
+3. **Mark completed immediately** - Don't batch completions
+4. **Update as scope changes** - Add new todos, remove irrelevant ones
+
+### Example
+
+```
+User: "Add user authentication with Google OAuth"
+
+Claude creates todos:
+1. [pending] Set up NextAuth with Google provider
+2. [pending] Create auth API route
+3. [pending] Add protected route layout
+4. [pending] Create login/logout buttons
+5. [pending] Test auth flow end-to-end
+
+Claude marks #1 in_progress, completes it, marks completed.
+Moves to #2, and so on.
+```
+
+---
+
+## Background Tasks
+
+Run long-running processes (dev server, watchers) in background so Claude can continue working.
+
+### Dev Server Pattern
+
+```bash
+# Start dev server in background
+npm run dev  # Use run_in_background: true
+
+# Claude can now:
+# - Make code changes
+# - Check server output via TaskOutput
+# - Verify hot reload worked
+```
+
+### When to Use Background Tasks
+
+- Dev servers (`npm run dev`)
+- Test watchers (`npm test -- --watch`)
+- Build processes for large projects
+- Any process that runs continuously
+
+### Handling Stuck Processes
+
+If a background task gets stuck:
+1. Check output with TaskOutput
+2. Kill if needed with KillShell
+3. Restart fresh
+
+---
+
 ## Before Client Review
 
 ### Polish Phase (Sprint X.5)

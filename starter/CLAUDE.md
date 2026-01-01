@@ -8,27 +8,49 @@ This project follows [Geek Projects Methodology](https://github.com/mhmcdermott/
 
 **For features:** Use `/epct-workflow` - requires plan approval before coding.
 
-**Skip workflow if:** Single file, <20 lines, no new deps, no behavior change.
+**Skip workflow if:** Single file, <20 lines, no new deps, no behaviour change.
 
 ---
 
-## Context
+## Context Files
 
-**What**: [What does this app/site do?]
+| File | Purpose | Update Frequency |
+|------|---------|------------------|
+| **CLAUDE.md** (this file) | Stable identity | Rarely |
+| **NOW.md** | Current state | Every session |
+| **MEMORY.md** | Patterns | When insights emerge |
 
-**Who**: [Who is it for?]
+---
 
-**Tier**: [1 = static site / 2 = app with users / 3 = SaaS]
+## Project Identity
 
-## Current Status
+**What:** [What does this app/site do?]
 
-**Working on**: [Current task]
+**Who:** [Who is it for?]
 
-**Next**: [What's after current task]
+**Why:** [What problem does it solve?]
+
+**Tier:** [1 = static / 2 = app with users / 3 = SaaS]
+
+---
 
 ## Tech Stack
 
-- Next.js 16.x / React 19.x / Tailwind 4.x / TypeScript
-- Auth: [None / NextAuth / etc.]
-- Database: [None / Supabase / Prisma / etc.]
-- Hosting: Vercel
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16.x / React 19.x |
+| Styling | Tailwind 4.x |
+| Language | TypeScript |
+| Auth | [None / NextAuth / etc.] |
+| Database | [None / Supabase / Prisma / etc.] |
+| Hosting | Vercel |
+
+---
+
+## Running Locally
+
+```bash
+npm install
+cp .env.example .env.local  # Then fill in values
+npm run dev
+```

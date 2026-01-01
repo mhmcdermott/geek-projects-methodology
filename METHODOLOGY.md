@@ -129,9 +129,39 @@ This is a Tier 2 project - users need accounts but no teams or payments.
 Follow the Geek Projects Methodology. Let's start with Explore.
 ```
 
+#### The CRIT Framework
+
+Before building complex features, use this framework to understand what you're actually building:
+
+```
+C - Context: What's the situation? What exists today?
+R - Role: Who is this for? What's their expertise level?
+I - Interview: Ask probing questions, challenge assumptions
+T - Task: Only after understanding, define what to build
+```
+
+**Why it matters:** 30 minutes of interviewing saves days of rework. Don't jump to code when someone says "add email handling" - understand what that means first.
+
+**Interview question types:**
+
+*Scenario-based (walk through real usage):*
+- "Walk me through receiving a flight confirmation email"
+- "Show me your current workflow when X happens"
+- "What does a typical day look like with this problem?"
+
+*Challenge assumptions:*
+- "You said archive marketing emails. What about from companies you've bought from?"
+- "You want VIPs always surfaced. How do you define VIP?"
+- "What about [edge case]?"
+
+*Dig deeper:*
+- "What would break your trust in the system?"
+- "What's the cost of a false positive vs false negative?"
+- "What did you skip because it felt obvious?"
+
 #### Explore: Start with a Brain Dump
 
-Record yourself answering these questions (voice memo, Loom, or just type stream-of-consciousness):
+Record yourself answering these questions (voice memo, Loom, or stream-of-consciousness typing). Don't organise, don't filter - just talk.
 
 **The Problem**
 - What's the pain? Who feels it? How often?
@@ -153,7 +183,25 @@ Record yourself answering these questions (voice memo, Loom, or just type stream
 - What are you definitely NOT building (even if people ask)?
 - Is this a weekend project or a 6-month commitment?
 
-Save the transcript to `docs/brain-dump.md`. Then distill into the outputs below.
+**Follow-up prompts** (after initial dump):
+- "What did you skip because it felt obvious?"
+- "What's the thing you're avoiding mentioning?"
+- "If I could read your mind right now, what else is there?"
+
+Save the transcript to `docs/brain-dump.md`.
+
+#### Processing the Brain Dump
+
+Distill your brain dump into four categories:
+
+| Category | Where it goes | Example |
+|----------|---------------|---------|
+| **Facts** | CLAUDE.md | "Uses Stripe for payments, Supabase for auth" |
+| **Current state** | NOW.md | "Working on user signup flow, blocked by Stripe webhook setup" |
+| **Patterns/insights** | MEMORY.md | "User validates ideas through research before committing" |
+| **Action items** | Plan or todos | "Set up Stripe test environment" |
+
+Then distill into the outputs below.
 
 #### Explore Phase Outputs
 
