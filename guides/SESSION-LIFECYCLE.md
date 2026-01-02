@@ -223,6 +223,28 @@ See [SESSION-HOOKS.md](SESSION-HOOKS.md) for automating context loading and stat
 
 ---
 
+## Optional: Session History Search
+
+For power users who run many Claude Code sessions, consider [Kuato](https://github.com/alexknowshtml/kuato) - a tool that indexes Claude Code's JSONL session files for search.
+
+**How it complements three-file context:**
+- Three-file system = explicit, forward-looking context you curate
+- Kuato = implicit history search when you need to find something from past sessions
+
+**When it's useful:**
+- "What did I do in that other project last month?"
+- Finding code snippets from sessions where you forgot to update MEMORY.md
+- Cross-project pattern discovery
+
+**When you don't need it:**
+- If you're consistent with context file updates
+- For single-project work
+- If you prefer explicit over implicit context
+
+The three-file system remains the primary approach. Kuato is a safety net for when context files weren't updated.
+
+---
+
 ## Troubleshooting
 
 ### "I don't remember what we were doing"
